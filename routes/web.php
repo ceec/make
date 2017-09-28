@@ -14,6 +14,14 @@
 Route::get('/', 'PageController@index');
 
 
+///everything is a link!
+Route::get('/category/{category}','PageController@category');
+Route::get('/project/{project}','PageController@project');
+Route::get('/tag/{tag}','PageController@tag');
+Route::get('/tool/{tool}','PageController@tool');
+
+
+
 
 ///authentication
 Auth::routes();

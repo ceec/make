@@ -22,7 +22,8 @@ ccmakesthings
 </style>
 	<div class="container">
 	<!-- hardcoded one -->
-		<a href="/"><h1>CC Makes Things</h1></a>
+		<br>
+		<h1>CC Makes Things - C</h1>
 		<br>
 
 	@foreach($steps as $step)
@@ -55,9 +56,9 @@ ccmakesthings
 						Tools: 
 						@foreach($step->tools as $key => $tool)
 						    @if( count( $step->tools ) != $key + 1 )
-						        <a href="/tool/{{strtolower($tool->tool->url)}}">{{$tool->tool->name}}</a>,
+						        <a href="/tag/{{strtolower($tool->tool->name)}}">{{$tool->tool->name}}</a>,
 						     @else
-						        <a href="/tool/{{strtolower($tool->tool->url)}}">{{$tool->tool->name}}</a>
+						        <a href="/tag/{{strtolower($tool->tool->name)}}">{{$tool->tool->name}}</a>
 						    @endif
 						@endforeach
 					@endif
