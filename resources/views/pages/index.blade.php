@@ -25,7 +25,7 @@ ccmakesthings
 
 		<div class="programming col-md-12">
 		
-			<h2><a href="">Category</a> - <a href=""> {{$step->project->name}}</a> <small>{{ date('F d, Y', strtotime($step->started_at)) }}</small></h2>
+			<h2><a href="">{{$step->project->category->name}}</a> - <a href=""> {{$step->project->name}}</a> <small>{{ date('F d, Y', strtotime($step->started_at)) }}</small></h2>
 			<div class="row">
 				<div class="col-3">
 					<i class="fa fa-folder-o" aria-hidden="true"></i> Tags: Programming, PHP, Laravel

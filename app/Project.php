@@ -13,4 +13,13 @@ class Project extends Model
     {
         return $this->hasMany('App\Projectstep');
     }
+
+
+     /**
+     * Get the category
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }    
 }
