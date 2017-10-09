@@ -24,10 +24,7 @@ ccmakesthings
 	<!-- hardcoded one -->
 		<a href="/"><h1>CC Makes Things</h1></a>
 		<br>
-		<?php
-			phpinfo();
-			exit;
-		?>
+
 
 	@foreach($steps as $step)
 
@@ -38,7 +35,34 @@ ccmakesthings
 			<h2>{{$step->name}}</h2>
 			<div class="row">
 				<div class="col-3">
+					@if(!($step->tags)->isEmpty())
+						<i class="fa fa-folder-o" aria-hidden="true"></i>
+						Tags: 
+						@foreach($step->tags as $key => $tag)
+						    @if( count( $step->tags ) != $key + 1 )
+						        <a href="/tag/{{strtolower($tag->tag->name)}}">{{$tag->tag->name}}</a>,
+						     @else
+						        <a href="/tag/{{strtolower($tag->tag->name)}}">{{$tag->tag->name}}</a>
+						    @endif
+						@endforeach
+					@endif
 
+
+					
+				</div>
+				<div class="col-3">
+					@if(!($step->tools)->isEmpty())
+						<i class="fa fa-wrench" aria-hidden="true"></i>
+						Tools: 
+						@foreach($step->tools as $key => $tool)
+						    @if( count( $step->tools ) != $key + 1 )
+						        <a href="/tool/{{strtolower($tool->tool->url)}}">{{$tool->tool->name}}</a>,
+						     @else
+						        <a href="/tool/{{strtolower($tool->tool->url)}}">{{$tool->tool->name}}</a>
+						    @endif
+						@endforeach
+					@endif
+				</div>
 			</div>
 			
 			<p>{!! $step->text !!}</p>
