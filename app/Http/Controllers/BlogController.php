@@ -69,7 +69,7 @@ class BlogController extends Controller {
         $b->name = $request->input('title');
         $b->text = $request->input('text');
         $b->started_at = $request->input('started_at');
-        $b->completed_at = NULL;
+        $b->completed_at = $request->input('completed_at');
         $b->complete = 0;
         $b->updated_by = Auth::id();  
         $b->save();

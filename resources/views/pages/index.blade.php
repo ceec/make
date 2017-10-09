@@ -67,9 +67,39 @@ ccmakesthings
 			
 			<p>{!! $step->text !!}</p>
 			@if(isset($step->completed_at))
+			<?php
+				//figure out how long 
+				
+				//start
+				$start = new DateTime($step->started_at);
+				$end = new DateTime($step->completed_at);
+				$time_spent = $start->diff($end);
+
+				//create a function to format this
+				$time_display = '';
+				if ($time_spent->y > 0) {
+					$time_display .= $time_spent->y." years ";
+				}
+
+				if ($time_spent->m > 0) {
+					$time_display .= $time_spent->m." months ";
+				}
+
+				if ($time_spent->d > 0) {
+					$time_display .= $time_spent->d." days ";
+				}
+
+				if ($time_spent->h > 0) {
+					$time_display .= $time_spent->h." hours ";
+				}	
+
+				if ($time_spent->i > 0) {
+					$time_display .= $time_spent->i." minutes ";
+				}								
+			?>
 			<div class="row">
 				<div class="col-3">
-					<strong><i class="fa fa-clock-o" aria-hidden="true"></i> Time Spent: 2 hours</strong> 
+					<strong><i class="fa fa-clock-o" aria-hidden="true"></i> Time Spent: {{$time_display}}</strong> 
 				</div>
 				<div class="col-3">
 					
