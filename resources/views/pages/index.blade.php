@@ -40,17 +40,7 @@ ccmakesthings
 					
 				</div>
 				<div class="col-3">
-					@if(!($step->tools)->isEmpty())
-						<i class="fa fa-wrench" aria-hidden="true"></i>
-						Tools: 
-						@foreach($step->tools as $key => $tool)
-						    @if( count( $step->tools ) != $key + 1 )
-						        <a href="/tool/{{strtolower($tool->tool->url)}}">{{$tool->tool->name}}</a>,
-						     @else
-						        <a href="/tool/{{strtolower($tool->tool->url)}}">{{$tool->tool->name}}</a>
-						    @endif
-						@endforeach
-					@endif
+
 				</div>
 			</div>
 			
