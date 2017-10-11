@@ -7,11 +7,11 @@ ccmakesthings
 
 @section('content')
 <style>
-.cosplay {
+.ccmake-cosplay {
 	background-color: #e2aef2;
 }
 
-.programming {
+.ccmake-programming {
 	background-color: #afd2ff;
 }
 
@@ -29,7 +29,7 @@ ccmakesthings
 	@foreach($steps as $step)
 
 
-		<div class="{{strtolower($step->project->category->name)}} col-md-12 step-container">
+		<div class="ccmake-{{strtolower($step->project->category->name)}} col-md-12 step-container">
 		{{ date('F j, Y', strtotime($step->started_at)) }}<br>
 			<h2><a href="/category/{{strtolower($step->project->category->name)}}">{{$step->project->category->name}}</a> - <a href="/project/{{strtolower($step->project->name)}}"> {{$step->project->name}}</a></h2>
 			<h2>{{$step->name}}</h2>
