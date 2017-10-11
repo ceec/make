@@ -17,7 +17,7 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $steps = Projectstep::all();
+        $steps = Projectstep::orderBy('created_at','desc')->get();
 
         return  view('pages.index')
         ->with('steps',$steps);
