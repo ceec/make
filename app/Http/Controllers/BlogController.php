@@ -85,7 +85,7 @@ class BlogController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function listDisplay() {
-            $blogs = Blog::orderBy('created_at','DESC')->get();
+            $blogs = Projectstep::orderBy('created_at','DESC')->get();
 
             return view('admin.blogList')
             ->with('blogs',$blogs);
@@ -97,7 +97,7 @@ class BlogController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function editDisplay($blog_id) {
-            $blog = Blog::find($blog_id);
+            $blog = Projectstep::find($blog_id);
 
             return view('admin.blogEdit')
             ->with('blog',$blog);
@@ -112,13 +112,9 @@ class BlogController extends Controller {
     public function edit(Request $request) {
         $blog_id = $request->input('blog_id');
 
-        $up = Blog::find($blog_id);
-        $up->active = $request->input('active');
-        $up->title = $request->input('title');
-        $up->blurb = $request->input('blurb');
-        $up->content = $request->input('content');
-        $up->image = $request->input('image');
-        $up->url = $request->input('url');
+        $up = Projectstep::find($blog_id);
+        $up->name = $request->input('name');
+        $up->text = $request->input('text');
         $up->updated_by = Auth::id();  
         $up->save();
 
