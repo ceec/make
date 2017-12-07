@@ -33,6 +33,16 @@ ccmakesthings
 		{{ date('F j, Y', strtotime($step->started_at)) }}<br>
 			<h2><a href="/category/{{strtolower($step->project->category->name)}}">{{$step->project->category->name}}</a> - <a href="/project/{{strtolower($step->project->name)}}"> {{$step->project->name}}</a></h2>
 			<h2>{{$step->name}}</h2>
+			@if($step->project_id == 8)
+			<div class="row">
+				<div class="col-3">
+					Theater:
+				</div>
+				<div class="col-3">
+					Rating:
+				</div>
+			</div>
+			@if
 			<div class="row">
 				<div class="col-3">
 					@if(!($step->tags)->isEmpty())

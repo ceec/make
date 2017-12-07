@@ -21,8 +21,6 @@ Route::get('/tag/{tag}','PageController@tag');
 Route::get('/tool/{tool}','PageController@tool');
 
 
-
-
 ///authentication
 Auth::routes();
 
