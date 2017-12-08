@@ -21,6 +21,10 @@ Route::get('/tag/{tag}','PageController@tag');
 Route::get('/tool/{tool}','PageController@tool');
 
 
+//specific pages
+Route::get('/movies','PageController@movies');
+
+
 ///authentication
 Auth::routes();
 

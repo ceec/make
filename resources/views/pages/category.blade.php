@@ -23,7 +23,7 @@ ccmakesthings
 	<div class="container">
 	<!-- hardcoded one -->
 		<br>
-		<h1>CC Makes Things - C</h1>
+		<h1>CC Makes Things - Cee</h1>
 		<br>
 
 	@foreach($steps as $step)
@@ -33,6 +33,9 @@ ccmakesthings
 		{{ date('F j, Y', strtotime($step->started_at)) }}<br>
 			<h2><a href="/category/{{strtolower($step->project->category->name)}}">{{$step->project->category->name}}</a> - <a href="/project/{{strtolower($step->project->name)}}"> {{$step->project->name}}</a></h2>
 			<h2>{{$step->name}}</h2>
+			<?php
+				print_r($step);
+			?>
 			@if($step->project_id == 8)
 			<div class="row">
 				<div class="col-3">

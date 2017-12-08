@@ -19,4 +19,9 @@ class Projectstep extends Model
     public function tools() {
     	return $this->hasMany('App\Projectsteptool');
     } 
+
+
+    public function movie() {
+        return $this->belongsTo('App\Movie');
+    }
 }

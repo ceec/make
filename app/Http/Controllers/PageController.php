@@ -9,6 +9,7 @@ use App\Projectsteptool;
 use App\Category;
 use App\Tag;
 use App\Tool;
+use App\Movie;
 
 class PageController extends Controller{
     /**
@@ -157,6 +158,20 @@ class PageController extends Controller{
 
         return  view('pages.index')
         ->with('steps',$steps);
+    } 
+
+
+    /////specific pages   
+    /**
+     * Movie List
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function movies(){
+        $movies = Movie::orderBy('time','desc')->get();
+
+        return  view('pages.movies')
+        ->with('movies',$movies);
     }    
 
 }
