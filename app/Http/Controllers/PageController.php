@@ -10,6 +10,8 @@ use App\Category;
 use App\Tag;
 use App\Tool;
 use App\Movie;
+use App\Volume;
+use App\Group;
 
 class PageController extends Controller{
     /**
@@ -173,5 +175,33 @@ class PageController extends Controller{
         return  view('pages.movies')
         ->with('movies',$movies);
     }    
+
+
+    /**
+     * Manga
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function manga(){
+        $mangas = Group::where('type_id','=',1)->get();
+
+        $artbooks = Group::where('type_id','=',2)->get();
+        return view('pages.manga')
+            ->with('mangas',$mangas)
+            ->with('artbooks',$artbooks);
+    }
+
+    /**
+     * Chelsea Doujin List
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function chelsea(){
+        $volumes = Volume::where('user_id','=',2)->get();
+       
+
+        return  view('pages.chelsea')
+            ->with('volumes',$volumes);
+    }  
 
 }

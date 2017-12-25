@@ -23,6 +23,8 @@ Route::get('/tool/{tool}','PageController@tool');
 
 //specific pages
 Route::get('/movies','PageController@movies');
+Route::get('/chelsea','PageController@chelsea');
+Route::get('/manga','PageController@manga');
 
 
 ///authentication
