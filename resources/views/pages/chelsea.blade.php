@@ -6,12 +6,21 @@ ccmakesthings
 @stop
 
 @section('content')
-	
+	<div class="container">
 
-	@foreach($volumes as $volume)
-
-		<img src="/images/chelsea/doujin/{{$volume->id}}.jpg"> {{$volume->title_j}} {{$volume->title_e	}}<br>
-	@endforeach
-
+		
+		@foreach($volumes as $volume)
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img-fluid" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
+			</div>
+			<div class="col-md-8">
+				{{$volume->title_j}} {{$volume->title_e	}}<br>
+			</div>
+			</div>
+			 
+		@endforeach
+		
+	</div>
 
 @endsection
