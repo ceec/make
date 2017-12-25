@@ -10,7 +10,7 @@ ccmakesthings
 
 	@foreach($volumes as $volume)
 
-		{{$volume->title_j}} {{$volume->title_e	}}<br>
+		<img src="/images/chelsea/doujin/{{$volume->id}}"> {{$volume->title_j}} {{$volume->title_e	}}<br>
 	@endforeach
 
 
