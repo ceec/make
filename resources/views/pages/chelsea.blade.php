@@ -19,7 +19,8 @@ ccmakesthings
                     				<img class="img-fluid" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
                     			</div>
                     			<div class="col-md-4">
-                    				{{$volume->title_j}} {{$volume->title_e	}}<br>
+                    				{{$volume->title_j}} {{$volume->title_e	}}<hr>
+                    				{{$volume->pairing->name}}
                     			</div>
                     		</div>
                         
@@ -28,6 +29,7 @@ ccmakesthings
                             if ($x%3==0) {
 ?>
                             </div>
+                            <hr>
                             <div class="row">
 <?php                            
                             }

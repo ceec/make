@@ -12,6 +12,7 @@ use App\Tool;
 use App\Movie;
 use App\Volume;
 use App\Group;
+use App\Pairing;
 
 class PageController extends Controller{
     /**
