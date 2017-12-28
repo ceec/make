@@ -25,7 +25,7 @@ ccmakesthings
                         
                         </div>
                         <?php
-                            if ($x%4==0) {
+                            if ($x%3==0) {
 ?>
                             </div>
                             <div class="row">
