@@ -25,6 +25,8 @@ Route::get('/tool/{tool}','PageController@tool');
 Route::get('/movies','PageController@movies');
 Route::get('/chelsea','PageController@chelsea');
 Route::get('/manga','PageController@manga');
+//baseline Europe
+Route::get('/london','PageController@london');
 
 
 ///authentication

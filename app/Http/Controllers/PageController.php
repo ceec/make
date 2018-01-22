@@ -205,4 +205,16 @@ class PageController extends Controller{
             ->with('volumes',$volumes);
     }  
 
+    /**
+     * Europe 2003 trip
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function london(){
+        
+       
+
+        return  view('pages.london');
+    }      
+
 }
