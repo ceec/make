@@ -50,7 +50,7 @@
 <p>Christine the Play Critic gives Richard III at the Globe a 0.92 out of 1. It got boring in some parts but the fighting and good actresses made up for it.</p>
 <p>After the Globe, we walked along the Thames some more and the Tate Museum of Modern Art. Allison and I walked through the Modern Galleries of Still Life on the 3rd floor. I saw a painting by Pollock, Cezanne, and Matisse.</p>
 <p>Then we hit the gift shop. After that we went to the temmpas (tapas) cafe. I ordered chicken croquet (croquette) and I liked it!<br>
-Muha!</p>
+Muha!</p><br>
 <p>Afterwards we crossed the Thames on a pedestrian bridge and walked for a bit on the other side of the river. We then caught a bus for Oxford Street and just rode it around looking at everything. There were a lot of pret restaurants and Pizza Huts EVERYWHERE.</p>
 <p>We made our way back to the hotel area and went to a nice Italian restaurant on Queensway Street. I had some really good pizza there.</p>
 <h3>Saturday June 28</h3>
