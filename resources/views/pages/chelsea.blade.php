@@ -9,7 +9,13 @@ ccmakesthings
 
 <style>
     .padding{
-        padding: 20px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .volume {
+        background-color: lightgray;
     }
 </style>
 	<div class="container">
@@ -22,10 +28,10 @@ ccmakesthings
 
                 
                     @foreach($volumes as $volume)
-                        <div style="background-color:orange" class="row">
+                        <div class="row volume">
        
-                    			<div style="background-color:green" class="col">
-                    				<img class="img-fluid padding" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
+                    			<div class="col">
+                    				<img class="img-fluid" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
                     			</div>
                     			<div class="col padding">
                     				{{$volume->title_j}} {{$volume->title_e	}}<hr>
@@ -36,7 +42,7 @@ ccmakesthings
                    
 
                             </div>
-                            <hr>
+                            <br>
                             
                     @endforeach
                 </div>
