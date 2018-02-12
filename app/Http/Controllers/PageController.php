@@ -205,6 +205,27 @@ class PageController extends Controller{
             ->with('volumes',$volumes);
     }  
 
+
+    ///travel
+     /**
+     * counites
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function counties(){
+        return view('pages.counties');
+    }
+
+
+     /**
+     * projects
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projects(){
+        return view('pages.projects');
+    }
+
     /**
      * Europe 2003 trip
      *

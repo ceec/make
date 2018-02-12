@@ -25,8 +25,15 @@ Route::get('/tool/{tool}','PageController@tool');
 Route::get('/movies','PageController@movies');
 Route::get('/chelsea','PageController@chelsea');
 Route::get('/manga','PageController@manga');
+Route::get('/counties','PageController@counties');
+Route::get('/projects','PageController@projects');
 //baseline Europe
 Route::get('/london','PageController@london');
+
+
+///data!
+Route::get('/data/counties','DataController@counties');
+Route::get('/data/words','DataController@words');
 
 
 ///authentication
