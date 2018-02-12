@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Project;
 use App\Projectstep;
 use App\Projectsteptool;
@@ -178,6 +179,28 @@ class PageController extends Controller{
     }    
 
 
+    ///writing
+     /**
+     * writing
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function wordcount(){
+        //get the total wordcount per story.
+       //so just want last one from each story, then add those all up
+
+        //https://stackoverflow.com/questions/5554075/mysql-get-last-distinct-set-of-records
+        //SELECT * FROM wordcounts WHERE id IN (SELECT MAX(id) FROM wordcounts GROUP BY document_id)
+        
+        $total = DB::select('SELECT sum(count) as total FROM writing.wordcounts WHERE id IN (SELECT MAX(id) FROM writing.wordcounts GROUP BY document_id)');
+
+        $total = $total[0]->total;
+
+
+        return view('pages.wordcount')
+        ->with('total',$total);
+    }
+
     /**
      * Manga
      *
@@ -205,6 +228,19 @@ class PageController extends Controller{
             ->with('volumes',$volumes);
     }  
 
+
+    /**
+     * All Doujin List
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function doujin(){
+        $volumes = Volume::where('user_id','=',2)->get();
+       
+
+        return  view('pages.doujin')
+            ->with('volumes',$volumes);
+    }  
 
     ///travel
      /**

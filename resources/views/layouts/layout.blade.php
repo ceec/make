@@ -59,7 +59,7 @@
                 </span>
               </a>
             </li>-->
-            <li>
+            <!--<li>
               <a href="https://twitter.com/ccmakesthings" data-toggle="tooltip"
                  title="My Twitter Page">
                 <span class="fa-stack fa-lg">
@@ -67,12 +67,12 @@
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
-            </li>
+            </li>-->
           </ul>
       </div>
       <div class="col-md-4">
         <br>
-        <a class="navbar-right" href="/contact">Contact Us</a>
+        <!--<a class="navbar-right" href="/contact">Contact Us</a>-->
       </div>
     </div>
   </div>
