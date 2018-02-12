@@ -24,10 +24,10 @@ ccmakesthings
                     @foreach($volumes as $volume)
                         <div style="background-color:orange" class="row">
        
-                    			<div style="background-color:green" class="col-xs-6">
+                    			<div style="background-color:green" class="col">
                     				<img class="img-fluid padding" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
                     			</div>
-                    			<div class="col-xs-6 padding">
+                    			<div class="col padding">
                     				{{$volume->title_j}} {{$volume->title_e	}}<hr>
                     				{{$volume->pairing->name}}
                     			</div>
