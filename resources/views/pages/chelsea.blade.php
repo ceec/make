@@ -6,41 +6,42 @@ ccmakesthings
 @stop
 
 @section('content')
-	<div class="container">
-    <div class="row">
-        <div class="col-md-12">
 
-                <div class="row">
-                    <?php $x=1; ?>
+<style>
+    .padding{
+        padding: 20px;
+    }
+</style>
+	<div class="container">
+    <h3><a href="/">ccmakesthings</a></h3>
+    <hr>
+    <input type="text" placeholder="Search" id="search">
+    <br><br>
+
+
+
+                
                     @foreach($volumes as $volume)
-                    	<div class="col-md-4">
-                    		<div class="row">
-                    			<div class="col-md-8">
-                    				<img class="img-fluid" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
+                        <div style="background-color:orange" class="row">
+       
+                    			<div style="background-color:green" class="col-xs-6">
+                    				<img class="img-fluid padding" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
                     			</div>
-                    			<div class="col-md-4">
+                    			<div class="col-xs-6 padding">
                     				{{$volume->title_j}} {{$volume->title_e	}}<hr>
                     				{{$volume->pairing->name}}
                     			</div>
-                    		</div>
+
                         
-                        </div>
-                        <?php
-                            if ($x%3==0) {
-?>
+                   
+
                             </div>
                             <hr>
-                            <div class="row">
-<?php                            
-                            }
-                            $x++;
-                        ?>
+                            
                     @endforeach
                 </div>
 
 
-        </div>
-    </div>
 		
 		
 	</div>
