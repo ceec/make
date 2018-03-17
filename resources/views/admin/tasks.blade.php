@@ -17,7 +17,7 @@
                         {!! Form::text('task','',['class'=>'','id'=>'content']) !!}
                         {!! Form::hidden('project_id',$project->project_id) !!} 
 
-         
+                        {!! Form::submit('Add') !!}
 
                     {!! Form::close() !!}        
                  </div>             
