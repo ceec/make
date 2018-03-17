@@ -12,6 +12,10 @@
                         {{$task->task}}<small>{{$task->created_at}}</small><br>
                     @endforeach
 
+                    {!! Form::open(['url' => '/add/task']) !!}
+
+
+                    {!! Form::close() !!}        
                  </div>             
       @endforeach
     
