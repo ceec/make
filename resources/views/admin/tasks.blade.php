@@ -14,6 +14,8 @@
 
                     {!! Form::open(['url' => '/add/task']) !!}
 
+                        {!! Form::text('task','',['class'=>'','id'=>'content']) !!}
+
 
                     {!! Form::close() !!}        
                  </div>             
