@@ -54,6 +54,25 @@ class TaskController extends Controller {
     } 
 
 
+    /**
+     * Add task
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request) {
 
+        $this->validate($request, [
+            'task' => 'required',
+        
+        ]);
+
+        $t = new Task;
+        $t->project_id = $request->input('project_id');
+        $t->status = 0;
+        $t->task = $request->input('task');
+        $t->save();
+
+        return redirect('/home/tasks');          
+    } 
 
 }

@@ -1,23 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
 
-    <h1>To Do</h1>
+
+
+<div class="container flex">  
+            @foreach($projects as $project)
+                <div>
+                    <h2>{{$project->project->name}}</h2>
+                    @foreach($project->tasks as $task)
+                        {{$task->task}}<small>{{$task->created_at}}</small><br>
+                    @endforeach
+
+                    {!! Form::open(['url' => '/add/task']) !!}
+
+                        {!! Form::text('task','',['class'=>'','id'=>'content']) !!}
+                        {!! Form::hidden('project_id',$project->project_id) !!} 
+
+                            {!! Form::submit('Add','',['class'=>'btn btn-default']) !!}
+
+                    {!! Form::close() !!}        
+                 </div>             
+      @endforeach
     
 
-    <div class="row">
-    	<div class="col-md-12">
-            @foreach($projects as $project)
-                <h2>{{$project->project->name}}</h2>
-                @foreach($project->tasks as $task)
-                    {{$task->task}}<small>{{$task->created_at}}</small><br>
-                @endforeach
-        
-
-      @endforeach
-    	</div>
-   	</div>
 
 </div>
 

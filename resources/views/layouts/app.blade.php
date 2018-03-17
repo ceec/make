@@ -12,6 +12,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.flex > div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+</style>
 </head>
 <body>
     <div id="app">
