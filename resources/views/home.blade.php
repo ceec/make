@@ -11,6 +11,10 @@
                     <a href="/home/blog/add">Add New Post</a><br>
                     <a href="/home/blog/list">Edit Post</a>
                 </div>
+                <div class="panel-body">
+                    <a href="/home/tasks">To Do List</a><br>
+                    
+                </div>                
             </div>
         </div>
     </div>
