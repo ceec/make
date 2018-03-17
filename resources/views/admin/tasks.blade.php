@@ -15,7 +15,9 @@
                     {!! Form::open(['url' => '/add/task']) !!}
 
                         {!! Form::text('task','',['class'=>'','id'=>'content']) !!}
+                        {!! Form::hidden('project_id',$project->project_id) !!} 
 
+         
 
                     {!! Form::close() !!}        
                  </div>             
