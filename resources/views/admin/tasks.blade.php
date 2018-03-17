@@ -8,7 +8,7 @@
             @foreach($projects as $project)
                 <div>
                     {{$project->project}}
-                    <h2>{{$project->project->name}}</h2>
+                    <h2></h2>
                     @foreach($project->tasks as $task)
                         {{$task->task}}<small>{{$task->created_at}}</small><br>
                     @endforeach
