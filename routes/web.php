@@ -53,4 +53,7 @@ Route::post('/edit/blog','BlogController@edit');
 
 //to do list
 Route::get('/home/tasks','TaskController@tasks');
+Route::get('/home/tasks/{complete}','TaskController@tasks');
+
 Route::post('/add/task','TaskController@add');
+Route::post('/edit/task','TaskController@edit');

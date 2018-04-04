@@ -13,17 +13,31 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
-.flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-}
+        .flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+        }
 
-.flex > div {
-    padding-left: 10px;
-    padding-right: 10px;
-}
+        .flex > div {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .todo {
+            padding-bottom: 10px;
+        }
+
+        .todo-complete {
+            display:inline;
+        }
+
+        .todo-complete-button {
+            padding:0px;
+            font-size: 10px;
+        }
+
 </style>
 </head>
 <body>
