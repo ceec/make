@@ -14,6 +14,7 @@ use App\Movie;
 use App\Volume;
 use App\Group;
 use App\Pairing;
+use App\Note;
 
 class PageController extends Controller{
     /**
@@ -178,6 +179,19 @@ class PageController extends Controller{
         ->with('movies',$movies);
     }    
 
+
+
+     /**
+     * Notes
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function notes(){
+        $notes = Note::all();
+
+        return  view('pages.notes')
+        ->with('notes',$notes);
+    }       
 
     ///writing
      /**

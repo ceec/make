@@ -8,13 +8,20 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <a href="/home/blog/add">Add New Post</a><br>
-                    <a href="/home/blog/list">Edit Post</a>
-                </div>
-                <div class="panel-body">
-                    <a href="/home/tasks">To Do List</a><br>
-                    
-                </div>                
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="/home/blog/add">Add New Post</a><br>
+                            <a href="/home/blog/list">Edit Post</a>        
+                            <br><br>      
+                            <a href="/home/tasks">To Do List</a><br>              
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/home/note/add">Add New Note</a><br>
+                            <a href="/home/note/list">Edit Note</a><br>
+                        </div>
+                    </div>
+
+                </div>             
             </div>
         </div>
     </div>

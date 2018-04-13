@@ -32,6 +32,9 @@ Route::get('/wordcount','PageController@wordcount');
 //baseline Europe
 Route::get('/london','PageController@london');
 
+//notes
+Route::get('/notes','PageController@notes');
+
 
 ///data!
 Route::get('/data/counties','DataController@counties');
@@ -50,6 +53,14 @@ Route::get('/home/blog/list','BlogController@listDisplay');
 //posting
 Route::post('/add/blog','BlogController@add');
 Route::post('/edit/blog','BlogController@edit');
+
+//add edit note
+Route::get('/home/note/add','NoteController@addDisplay');
+Route::get('/home/note/edit/{note_id}','NoteController@editDisplay');
+Route::get('/home/note/list','NoteController@listDisplay');
+//posting
+Route::post('/add/note','NoteController@add');
+Route::post('/edit/note','NoteController@edit');
 
 //to do list
 Route::get('/home/tasks','TaskController@tasks');
