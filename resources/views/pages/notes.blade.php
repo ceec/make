@@ -19,7 +19,7 @@ ccmakesthings
                 @foreach($notes as $note)
                     <div class="card card-block bg-faded">
                     <h3>{{$note->title}}</h3>
-                        {{$note->note}}<br>
+                        {!! $note->note !!}<br>
                         <small>{{$note->created_at}}</small>
                     </div>
                     <br>
