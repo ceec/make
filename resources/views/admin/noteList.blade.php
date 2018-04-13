@@ -9,7 +9,7 @@
     <div class="row">
     	<div class="col-md-12">
       @foreach($notes as $note)
-        {{date('Y-m-d',strtotime($note->created_at))}} <a href="/home/note/edit/{{$note->id}}">{{ $note->id }}</a><br>
+        {{date('Y-m-d',strtotime($note->created_at))}} <a href="/home/note/edit/{{$note->id}}">{{ $note->title }}</a><br>
 
       @endforeach
 			

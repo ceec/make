@@ -16,7 +16,11 @@
 @endif
     <div class="row">
     	<div class="col-md-12">
-			{!! Form::open(['url' => '/add/note']) !!}                          
+			{!! Form::open(['url' => '/add/note']) !!}     
+            <div class="form-group">
+              <label for="title">title</label>
+               {!! Form::text('title','',['class'=>'form-control','id'=>'title']) !!}
+            </div>                                     
             <div class="form-group">
               <label for="note">Note</label>
                {!! Form::textarea('note','',['class'=>'form-control','id'=>'note']) !!}

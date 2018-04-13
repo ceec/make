@@ -67,6 +67,7 @@ class NoteController extends Controller {
         ]);
 
         $n = new Note;
+        $n->title = $request->input('title');
         $n->note = $request->input('note');
         $n->save();
 
@@ -109,6 +110,7 @@ class NoteController extends Controller {
         $note_id = $request->input('note_id');
 
         $up = Note::find($note_id);
+        $up->title = $request->input('title');
         $up->note = $request->input('note');
         $up->save();
 
