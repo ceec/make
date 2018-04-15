@@ -3,9 +3,6 @@
 
 
 @section('content')
-        <br>
-        <a href="/"><h1>CC Makes Things</h1></a>
-        <br>
 <div class="container">
         <h2>London and Paris Trip</h2>
 

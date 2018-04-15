@@ -21,11 +21,6 @@ ccmakesthings
 }
 </style>
 	<div class="container">
-	<!-- hardcoded one -->
-		<br>
-		<h1>CC Makes Things - Cee</h1>
-		<br>
-
 	@foreach($steps as $step)
 
 

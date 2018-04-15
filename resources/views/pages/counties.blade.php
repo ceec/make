@@ -7,10 +7,6 @@ Counties
 
 @section('content')
 <div class="container">
-  <!-- hardcoded one -->
-    <br>
-    <a href="/"><h1>CC Makes Things</h1></a>
-    <br>
     <div class="row">
         <h4>Counties</h4>
 <style>

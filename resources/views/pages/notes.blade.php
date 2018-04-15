@@ -7,10 +7,6 @@ ccmakesthings
 
 @section('content')
 	<div class="container">
-	<!-- hardcoded one -->
-		<br>
-		<a href="/"><h1>CC Makes Things</h1></a>
-		<br>
         <div class="row">
             <div class="col-md-2">
                 <h3>Tags</h3>

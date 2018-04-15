@@ -19,8 +19,6 @@ ccmakesthings
     }
 </style>
 	<div class="container">
-    <h3><a href="/">ccmakesthings</a></h3>
-    <hr>
     <input type="text" placeholder="Search" id="search">
     <br><br>
 

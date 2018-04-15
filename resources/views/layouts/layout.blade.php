@@ -34,9 +34,32 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        .cc-nav2 {
+          list-style: none;
+          display: inline;
+        }
     </style>
 </head>
 <body id="app-layout">
+    <nav class="navbar navbar-expand-md navbar-light bg-light mb-1">
+        <div class="container">
+      <a class="navbar-brand" href="/">CC Makes Things</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="/notes">Notes</a>
+          </li>                    
+        </ul>
+      </div>
+      </div>
+    </nav>
 
 
     @yield('content')

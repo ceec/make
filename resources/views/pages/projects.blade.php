@@ -21,10 +21,6 @@ Projects
 }
 </style>
 	<div class="container">
-	<!-- hardcoded one -->
-		<br>
-		<a href="/"><h1>CC Makes Things</h1></a>
-		<br>
 		<h2>Projects</h2>
 		<ul>
 			<li><a href="/counties">County Map</a></li>
@@ -32,6 +28,7 @@ Projects
 			<li><a href="/london">London Trip</a></li>
 			<li><a href="/chelsea">Chelsea Doujin</a></li>
 			<li><a href="/manga">Manga Collected</a></li>
+			<li><a href="/wordcount">Wordcount</a></li>
 		</ul>
 
 		<h2>To move Over</h2>

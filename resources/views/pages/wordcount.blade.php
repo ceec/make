@@ -7,8 +7,6 @@ Wordcount
 
 @section('content')
 <div class="container">
-    <br>
-    <a href="/"><h1>CC Makes Things</h1></a>
     <div class="row">
         <h4>Words Per Day - {{$total}} total words</h4>
 
