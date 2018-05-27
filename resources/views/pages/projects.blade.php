@@ -39,6 +39,11 @@ Projects
 			<li>Rocks</li>	
 			<li>Trips</li>
 		</ul>
+		<h2>Websites</h2>
+		<ul>
+			<li><a href="https://enstars.info">enstars.info</a></li>
+			<li><a href="https://figurerant.com">figurerant.com</a></li>
+		</ul>
 	</div>
 
 @endsection
