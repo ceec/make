@@ -38,6 +38,22 @@
             font-size: 10px;
         }
 
+        .project-color-10 {
+            background-color: orange;
+        }
+
+        .project-color-2 {
+            background-color: pink;
+        }
+
+        .project-color-10 {
+            background-color: green;
+        }        
+
+        .project-color-9 {
+            background-color: blue;
+        }   
+
 </style>
 </head>
 <body>

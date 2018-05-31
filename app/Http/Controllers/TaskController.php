@@ -68,7 +68,18 @@ class TaskController extends Controller {
             }
 
 
+            //switching UI to not be categorized?
+             if ($status == 'complete') {
+                  $tasks = Task::where('status','=',1)->get();
+             } else {
+                 $tasks = Task::where('status','=',0)->orderBy('created_at','desc')->get();
+             }
+           
+
+
+
             return view('admin.tasks')
+                ->with('tasks',$tasks)
                 ->with('projects',$projects);
     } 
 
