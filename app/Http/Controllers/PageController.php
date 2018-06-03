@@ -286,6 +286,19 @@ class PageController extends Controller{
        
 
         return  view('pages.london');
-    }      
+    }   
+    
+    
+    /**
+     * Resources
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function resources(){
+        
+       
+
+        return  view('pages.resources');
+    }       
 
 }

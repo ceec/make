@@ -55,7 +55,10 @@
           </li>  
           <li class="nav-item">
             <a class="nav-link" href="/notes">Notes</a>
-          </li>                    
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="/resources">Resources</a>
+          </li>                              
         </ul>
       </div>
       </div>

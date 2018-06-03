@@ -29,6 +29,7 @@ Route::get('/counties','PageController@counties');
 Route::get('/projects','PageController@projects');
 Route::get('/doujin','PageController@doujin');
 Route::get('/wordcount','PageController@wordcount');
+Route::get('/resources','PageController@resources');
 //baseline Europe
 Route::get('/london','PageController@london');
 
