@@ -15,6 +15,7 @@ use App\Volume;
 use App\Group;
 use App\Pairing;
 use App\Note;
+use App\Resource;
 
 class PageController extends Controller{
     /**
@@ -295,10 +296,11 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function resources(){
-        
+        $resources = Resource::all();
        
 
-        return  view('pages.resources');
+        return  view('pages.resources')
+            ->with('resources',$resources);
     }       
 
 }

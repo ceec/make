@@ -8,6 +8,11 @@ ccmakesthings
 @section('content')
 	<div class="container">
     <h1>Resources</h1>
+    <ul>
+    @foreach($resources as $resource)
+      <li><a href="{{$resource->url}}">{{$resource->title}}</a></li>
+    @endforeach
+    </ul>
     <h2>Programming</h2>
     <ul>
       <li>Udemy - Node with React</li>
