@@ -13,28 +13,6 @@ ccmakesthings
       <li><a href="{{$resource->url}}">{{$resource->title}}</a></li>
     @endforeach
     </ul>
-    <h2>Programming</h2>
-    <ul>
-      <li>Udemy - Node with React</li>
-      <li>Udemy - Modern React with Redux</li>
-      <li>Udemy - AWS Certified Solutions Architect</li>
-      <li>Book - Programming Voice Interfaces</li>
-      <li>Book - Mobile App Development with Ionic</li>
-      <li>Book - JSON at Work</li>
-      <li>Book - Refactoring JavaScript</li>
-      <li>Book - CSS Refactoring</li>
-      <li>Book - Interactive Data Visualization for the Web</li>
-      <li>Book - Learning React Native</li>
-      <li>Book - Learning HTTP/2</li>
-      <li>Book - SVG Animations</li>
-      <li>Book - Working with Static Sites</li>
-      <li>Book - React Native Cookbook</li>
-      <li>Book - CSS: The Definitive Guide</li>
-      <li>Book - Using SVG with CSS3 and HTML5</li>
-      <li>Book - Learning React1</li>
-      <li>Book - High Performance Images</li>
-      <li>Book - Go through HTMl and CSS book</li>
-    </ul>
     <h2>Cosplay</h2>
       <ul>
         <li>Book - Guide to Basic Garment Assembly for the Fashion Industry</li>
