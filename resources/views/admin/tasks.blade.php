@@ -9,7 +9,7 @@
         <div class="col-md-3">    
             {!! Form::open(['url' => '/add/task']) !!}
             {!! Form::text('task','',['class'=>'','id'=>'content']) !!}
-            {!! Form::hidden('project_id',17) !!} 
+             {!! Form::select('project_id',$allprojects,'',['class'=>'','id'=>'content']) !!}
             {!! Form::submit('Add') !!}
             {!! Form::close() !!}         
         </div>

@@ -75,11 +75,12 @@ class TaskController extends Controller {
                  $tasks = Task::where('status','=',0)->orderBy('created_at','desc')->get();
              }
            
-
+             $allprojects = Project::pluck('name','id');;
 
 
             return view('admin.tasks')
                 ->with('tasks',$tasks)
+                ->with('allprojects',$allprojects)
                 ->with('projects',$projects);
     } 
 
