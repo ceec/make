@@ -13,7 +13,10 @@
                             <a href="/home/blog/add">Add New Post</a><br>
                             <a href="/home/blog/list">Edit Post</a>        
                             <br><br>      
-                            <a href="/home/tasks">To Do List</a><br>              
+                            <a href="/home/tasks">To Do List</a><br>       
+                            <br><br>
+                            <a href="/home/purchase/add">Add New Purchase</a><br>      
+                            <a href="/home/purchase/list">Edit Purchase</a>      
                         </div>
                         <div class="col-md-6">
                             <a href="/home/note/add">Add New Note</a><br>

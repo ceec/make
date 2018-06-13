@@ -69,3 +69,12 @@ Route::get('/home/tasks/{complete}','TaskController@tasks');
 
 Route::post('/add/task','TaskController@add');
 Route::post('/edit/task','TaskController@edit');
+
+//purchases
+Route::get('/home/purchase/add','PurchaseController@addDisplay');
+Route::get('/home/purchase/edit/{purchase_id}','PurchaseController@editDisplay');
+Route::get('/home/purchase/list','PurchaseController@listDisplay');
+//posting
+//posting
+Route::post('/add/purchase','PurchaseController@add');
+Route::post('/edit/purchase','PurchaseController@edit');
