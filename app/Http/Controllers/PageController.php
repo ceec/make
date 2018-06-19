@@ -194,6 +194,19 @@ class PageController extends Controller{
         ->with('notes',$notes);
     }       
 
+     /**
+     * Note
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function note($note_id){
+        $note = Note::find($note_id);
+
+        return  view('pages.note')
+        ->with('note',$note);
+    }  
+
+
     ///writing
      /**
      * writing

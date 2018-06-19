@@ -35,6 +35,8 @@ Route::get('/london','PageController@london');
 
 //notes
 Route::get('/notes','PageController@notes');
+//just one
+Route::get('/note/{note_id}','PageController@note');
 
 
 ///data!
