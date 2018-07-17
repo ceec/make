@@ -59,7 +59,7 @@ class PageController extends Controller{
 
 
         $steps = new Projectstep;
-        $steps = $steps->select('projectsteps.*')->join('projects','projects.id','=','projectsteps.project_id')->where('projects.category_id','=',$category->id)->get();
+        $steps = $steps->select('projectsteps.*')->join('projects','projects.id','=','projectsteps.project_id')->where('projects.category_id','=',$category->id)->orderBy('projectsteps.created_at','desc')->get();
 
 
 
