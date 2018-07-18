@@ -26,7 +26,7 @@ ccmakesthings
 
 		<div class="ccmake-{{strtolower($step->project->category->name)}} col-md-12 step-container">
 		{{ date('F j, Y', strtotime($step->started_at)) }}<br>
-			<h2><a href="/category/{{$step->project->category->url()}}">{{$step->project->category->name}}</a> - <a href="/project/{{$step->project->url()}}"> {{$step->project->name}}</a></h2>
+			<h2><a href="/category/{{$step->project->category->url}}">{{$step->project->category->name}}</a> - <a href="/project/{{$step->project->url}}"> {{$step->project->name}}</a></h2>
 			<h2>{{$step->name}}</h2>
 			@if($step->project_id == 8)
 			<div class="row">

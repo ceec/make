@@ -81,7 +81,7 @@ class PageController extends Controller{
         if (ctype_digit($project)){
             $project = Project::where('id','=',$project)->first();
         } else {
-            $project = Project::where('name','=',$project)->first();
+            $project = Project::where('url','=',$project)->first();
         }
 
         //when bad url is passed

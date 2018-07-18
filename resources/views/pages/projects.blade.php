@@ -24,7 +24,7 @@ Projects
 		<h2>Projects</h2>
 		<ul>
 			@foreach($projects as $project)
-		<li><a href="/project/{{$project->url()}}">{{$project->name}}</a></li>
+		<li><a href="/project/{{formatUrl($project->url)}}">{{$project->name}}</a></li>
 			@endforeach
 			<li><a href="/counties">County Map</a></li>
 			<li><a href="/movies">Movies Seen</a></li>
