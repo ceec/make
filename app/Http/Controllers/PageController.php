@@ -287,7 +287,10 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function projects(){
-        return view('pages.projects');
+        $projects = Project::all();
+        
+        return view('pages.projects')
+        ->with('projects',$projects);
     }
 
     /**

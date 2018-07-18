@@ -23,6 +23,9 @@ Projects
 	<div class="container">
 		<h2>Projects</h2>
 		<ul>
+			@foreach($projects as $project)
+		<li><a href="/project/{{$project->name}}">{{$project->name}}</a></li>
+			@endforeach
 			<li><a href="/counties">County Map</a></li>
 			<li><a href="/movies">Movies Seen</a></li>
 			<li><a href="/london">London Trip</a></li>
