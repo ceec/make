@@ -22,11 +22,11 @@
               {!! Form::select('project_id', $projects,'' ,['class'=>'form-control', 'id'=>'project','placeholder' => 'Project']) !!} 
             </div>
             <div class="form-group">
-              <label for="japanese-name">Started At</label>
+              <label for="started-at">Started At</label>
                {!! Form::text('started_at','',['class'=>'form-control','id'=>'title']) !!}
             </div>   
             <div class="form-group">
-              <label for="japanese-name">Completed At</label>
+              <label for="completed-at">Completed At</label>
                {!! Form::text('completed_at','',['class'=>'form-control','id'=>'title']) !!}
             </div>                           
             <div class="form-group">

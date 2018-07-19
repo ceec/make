@@ -9,13 +9,20 @@
     <div class="row">
     	<div class="col-md-12">
 			{!! Form::open(['url' => '/edit/blog']) !!}
-
             <div class="form-group">
-              <label for="japanese-name">Name</label>
+              <label for="started-at">Started At</label>
+               {!! Form::text('started_at',$blog->started_at,['class'=>'form-control','id'=>'title']) !!}
+            </div>   
+            <div class="form-group">
+              <label for="completed-at">Completed At</label>
+               {!! Form::text('completed_at',$blog->completed_at,['class'=>'form-control','id'=>'title']) !!}
+            </div>  
+            <div class="form-group">
+              <label for="name">Name</label>
                {!! Form::text('name',$blog->name,['class'=>'form-control','id'=>'title']) !!}
             </div>                  
             <div class="form-group">
-              <label for="s-name">Text</label>
+              <label for="text">Text</label>
                {!! Form::textarea('text',$blog->text,['class'=>'form-control','id'=>'content']) !!}
             </div>    
               
