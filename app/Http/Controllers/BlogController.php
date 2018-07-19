@@ -115,8 +115,8 @@ class BlogController extends Controller {
         $up = Projectstep::find($blog_id);
         $up->name = $request->input('name');
         $up->text = $request->input('text');
-        $b->started_at = $request->input('started_at');
-        $b->completed_at = $request->input('completed_at');        
+        $up->started_at = $request->input('started_at');
+        $up->completed_at = $request->input('completed_at');        
         $up->updated_by = Auth::id();  
         $up->save();
 
