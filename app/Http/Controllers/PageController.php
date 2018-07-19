@@ -24,7 +24,7 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $steps = Projectstep::orderBy('created_at','desc')->get();
+        $steps = Projectstep::orderBy('completed_at','desc')->get();
 
         return  view('pages.index')
         ->with('steps',$steps);
@@ -59,7 +59,7 @@ class PageController extends Controller{
 
 
         $steps = new Projectstep;
-        $steps = $steps->select('projectsteps.*')->join('projects','projects.id','=','projectsteps.project_id')->where('projects.category_id','=',$category->id)->orderBy('projectsteps.created_at','desc')->get();
+        $steps = $steps->select('projectsteps.*')->join('projects','projects.id','=','projectsteps.project_id')->where('projects.category_id','=',$category->id)->orderBy('projectsteps.completed_at','desc')->get();
 
 
 
@@ -91,7 +91,7 @@ class PageController extends Controller{
         }  
 
 
-            $steps = Projectstep::where('project_id','=',$project->id)->get();
+            $steps = Projectstep::where('project_id','=',$project->id)->orderBy('completed_at','DESC')->get();
 
        // $projects = Category::all();
 

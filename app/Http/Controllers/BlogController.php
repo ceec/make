@@ -60,13 +60,13 @@ class BlogController extends Controller {
     public function add(Request $request) {
 
         $this->validate($request, [
-            'title' => 'required',
+            'name' => 'required',
         
         ]);
 
         $b = new Projectstep;
         $b->project_id = $request->input('project_id');
-        $b->name = $request->input('title');
+        $b->name = $request->input('name');
         $b->text = $request->input('text');
         $b->started_at = $request->input('started_at');
         $b->completed_at = $request->input('completed_at');
@@ -115,6 +115,8 @@ class BlogController extends Controller {
         $up = Projectstep::find($blog_id);
         $up->name = $request->input('name');
         $up->text = $request->input('text');
+        $b->started_at = $request->input('started_at');
+        $b->completed_at = $request->input('completed_at');        
         $up->updated_by = Auth::id();  
         $up->save();
 

@@ -23,18 +23,18 @@
             </div>
             <div class="form-group">
               <label for="started-at">Started At</label>
-               {!! Form::text('started_at','',['class'=>'form-control','id'=>'title']) !!}
+               {!! Form::text('started_at','',['class'=>'form-control','id'=>'started-at']) !!}
             </div>   
             <div class="form-group">
               <label for="completed-at">Completed At</label>
-               {!! Form::text('completed_at','',['class'=>'form-control','id'=>'title']) !!}
+               {!! Form::text('completed_at','',['class'=>'form-control','id'=>'completed-at']) !!}
             </div>                           
             <div class="form-group">
-              <label for="japanese-name">Title</label>
-               {!! Form::text('title','',['class'=>'form-control','id'=>'title']) !!}
+              <label for="name">Title</label>
+               {!! Form::text('name','',['class'=>'form-control','id'=>'name']) !!}
             </div>                            
             <div class="form-group">
-              <label for="s-name">Content</label>
+              <label for="content">Content</label>
                {!! Form::textarea('text','',['class'=>'form-control','id'=>'content']) !!}
             </div>                 
                                                                        
