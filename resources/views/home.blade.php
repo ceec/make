@@ -28,18 +28,33 @@
                             <a href="/home/note/add">Add New Note</a><br>
                             <a href="/home/note/list">Edit Note</a><br>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-3">
                             <h2>Books</h2>
                             <a href="/home/book/add">Add New Book</a><br>
                             <a href="/home/book/list">Edit Book</a><br>
-                        </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
                         <div class="col-md-3">
                             <h2>Groups</h2>
                             <a href="/home/group/add">Add Group</a><br>
                             <a href="/home/group/list">Edit Group</a><br>
-                        </div>                        
+                        </div>  
+                        <div class="col-md-3">
+                            <h2>Authors</h2>
+                            <a href="/home/author/add">Add Author</a><br>
+                            <a href="/home/author/list">Edit Author</a><br>
+                        </div>  
+                        <div class="col-md-3">
+                            <h2>Publishers</h2>
+                            <a href="/home/publisher/add">Add Publisher</a><br>
+                            <a href="/home/publisher/list">Edit Publisher</a><br>
+                        </div>        
+                        <div class="col-md-3">
+                            <h2>Types</h2>
+                            <a href="/home/type/add">Add Type</a><br>
+                            <a href="/home/type/list">Edit Type</a><br>
+                        </div>                                                                                          
                     </div>
 
                 </div>             
