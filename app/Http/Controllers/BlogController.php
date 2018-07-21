@@ -98,9 +98,11 @@ class BlogController extends Controller {
      */
     public function editDisplay($blog_id) {
             $blog = Projectstep::find($blog_id);
+            $projects = Project::pluck('name','id');
 
             return view('admin.blogEdit')
-            ->with('blog',$blog);
+            ->with('blog',$blog)
+            ->with('projects',$projects);
     } 
 
 
@@ -113,15 +115,15 @@ class BlogController extends Controller {
         $blog_id = $request->input('blog_id');
 
         $up = Projectstep::find($blog_id);
+        $up->project_id = $request->input('project_id');
         $up->name = $request->input('name');
         $up->text = $request->input('text');
         $up->started_at = $request->input('started_at');
         $up->completed_at = $request->input('completed_at');        
         $up->updated_by = Auth::id();  
         $up->save();
-
-
-        return redirect('/home');          
+   
+        return redirect('/home/blog/edit/'.$blog_id);       
     } 
 
 

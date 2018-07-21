@@ -8,7 +8,11 @@
 
     <div class="row">
     	<div class="col-md-12">
-			{!! Form::open(['url' => '/edit/blog']) !!}
+      {!! Form::open(['url' => '/edit/blog']) !!}
+            <div class="form-group">
+              <label for="project">Project</label>
+              {!! Form::select('project_id', $projects,$blog->project_id,['class'=>'form-control', 'id'=>'project','placeholder' => 'Project']) !!} 
+            </div>      
             <div class="form-group">
               <label for="started-at">Started At</label>
                {!! Form::text('started_at',$blog->started_at,['class'=>'form-control','id'=>'title']) !!}
