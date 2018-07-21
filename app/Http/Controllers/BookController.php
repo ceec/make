@@ -76,10 +76,10 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function listDisplay() {
-           $purchases = Purchase::orderBy('created_at','desc')->get();
+           $volumes = Volume::orderBy('created_at','desc')->get();
 
-            return view('admin.purchaseList')
-            ->with('purchases',$purchases);
+            return view('admin.bookList')
+            ->with('volumes',$volumes);
     } 
 
     /**
@@ -87,15 +87,13 @@ class BookController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function editDisplay($purchase_id) {
-            $purchase = Purchase::find($purchase_id);
-            $projects = Project::pluck('name','id');;
-            $stores = Store::pluck('store','id');
+    public function editDisplay($book_id) {
+            $volume = Volume::find($book_id);
+             $groups = Group::pluck('title','id');;
 
-            return view('admin.purchaseEdit')
-            ->with('purchase',$purchase)
-            ->with('projects',$projects)
-            ->with('stores',$stores);
+            return view('admin.bookEdit')
+            ->with('groups',$groups)
+            ->with('volume',$volume);
     } 
 
 
@@ -105,17 +103,20 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request) {
-        $purchase_id = $request->input('purchase_id');
+        $volume_id = $request->input('volume_id');
 
-        $up = Purchase::find($purchase_id);
-        $up->name = $request->input('name');
-        $up->price = $request->input('price');
-        $up->store_id = $request->input('store_id');
-        $up->project_id = $request->input('project_id');
+        $up = Volume::find($volume_id);
+        $up->group_id = $request->input('group_id');
+        $up->volume = $request->input('volume');        
+        $up->title_e = $request->input('title_e');
+        $up->title_j = $request->input('title_j');
+        $up->published_date = $request->input('published_date');
+        $up->isbn = $request->input('isbn');
+        $up->original_price = $request->input('original_price');           
         $up->save();
 
 
-        return redirect('/home/purchase/edit/'.$purchase_id);          
+        return redirect('/home/book/edit/'.$volume_id);          
     } 
 
 
