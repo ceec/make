@@ -80,3 +80,11 @@ Route::get('/home/purchase/list','PurchaseController@listDisplay');
 //posting
 Route::post('/add/purchase','PurchaseController@add');
 Route::post('/edit/purchase','PurchaseController@edit');
+
+///books
+Route::get('/home/book/add','BookController@addDisplay');
+Route::get('/home/book/edit/{book_id}','BookController@editDisplay');
+Route::get('/home/book/list','BookController@listDisplay');
+//posting
+Route::post('/home/add/book','BookController@add');
+Route::post('/home/edit/book','BookController@edit');

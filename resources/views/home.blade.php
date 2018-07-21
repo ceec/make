@@ -23,6 +23,13 @@
                             <a href="/home/note/list">Edit Note</a><br>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Books</h2>
+                            <a href="/home/book/add">Add New Book</a><br>
+                            <a href="/home/book/list">Edit Book</a><br>
+                        </div>
+                    </div>
 
                 </div>             
             </div>
