@@ -88,3 +88,11 @@ Route::get('/home/book/list','BookController@listDisplay');
 //posting
 Route::post('/home/add/book','BookController@add');
 Route::post('/home/edit/book','BookController@edit');
+
+///groups
+Route::get('/home/group/add','GroupController@addDisplay');
+Route::get('/home/group/edit/{group_id}','GroupController@editDisplay');
+Route::get('/home/group/list','GroupController@listDisplay');
+//posting
+Route::post('/home/add/group','GroupController@add');
+Route::post('/home/edit/group','GroupController@edit');
