@@ -81,13 +81,22 @@ Route::get('/home/purchase/list','PurchaseController@listDisplay');
 Route::post('/add/purchase','PurchaseController@add');
 Route::post('/edit/purchase','PurchaseController@edit');
 
-///books
+///volumes
 Route::get('/home/book/add','BookController@addDisplay');
 Route::get('/home/book/edit/{book_id}','BookController@editDisplay');
 Route::get('/home/book/list','BookController@listDisplay');
 //posting
 Route::post('/home/add/book','BookController@add');
 Route::post('/home/edit/book','BookController@edit');
+
+///volumes
+Route::get('/home/volume/add','VolumeController@addDisplay');
+Route::get('/home/volume/edit/{volume_id}','VolumeController@editDisplay');
+Route::get('/home/volume/list','VolumeController@listDisplay');
+//posting
+Route::post('/home/add/volume','VolumeController@add');
+Route::post('/home/edit/volume','VolumeController@edit');
+
 
 ///groups
 Route::get('/home/group/add','GroupController@addDisplay');

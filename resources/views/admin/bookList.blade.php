@@ -8,8 +8,8 @@
 
     <div class="row">
     	<div class="col-md-12">
-      @foreach($volumes as $volume)
-        {{date('Y-m-d',strtotime($volume->created_at))}} <a href="/home/book/edit/{{$volume->id}}">{{ $volume->title_e }} - {{ $volume->title_j }}</a><br>
+      @foreach($books as $book)
+        {{date('Y-m-d',strtotime($book->created_at))}} <a href="/home/book/edit/{{$book->id}}">{{ $book->title }}</a><br>
 
       @endforeach
 			

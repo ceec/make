@@ -32,7 +32,12 @@
                             <h2>Books</h2>
                             <a href="/home/book/add">Add New Book</a><br>
                             <a href="/home/book/list">Edit Book</a><br>
-                        </div>                        
+                        </div>  
+                       <div class="col-md-3">
+                            <h2>Volumes</h2>
+                            <a href="/home/volume/add">Add New Volume</a><br>
+                            <a href="/home/volume/list">Edit Volume</a><br>
+                        </div>                                                
                     </div>
                     <div class="row">
                         <div class="col-md-3">

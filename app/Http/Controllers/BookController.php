@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Group;
-use App\Volume;
-
+use App\Book;
+use App\Author;
+use App\Publisher;
+use App\Type;
 
 use Auth;
 
@@ -30,11 +31,14 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function addDisplay() {
-            //get list of tags 
+        $authors = Author::pluck('name','id');
+        $publishers = Publisher::pluck('name','id');
+        $types = Type::pluck('type','id');
 
-            $groups = Group::pluck('title','id');;
             return view('admin.bookAdd')
-            ->with('groups',$groups);
+            ->with('types',$types)
+            ->with('publishers',$publishers)
+            ->with('authors',$authors);
     } 
 
     /**
@@ -45,25 +49,14 @@ class BookController extends Controller {
     public function add(Request $request) {
 
 
-        $v = new Volume;
-        $v->user_id = 0;
-        $v->group_id = $request->input('group_id');
-        $v->volume = $request->input('volume');
-        $v->title_j = $request->input('title_j');
-        $v->title_e = $request->input('title_e');
-        $v->published_date = $request->input('published_date');
-        $v->isbn = $request->input('isbn');
-        $v->pairing_id = 0;   
-        $v->original_price = $request->input('original_price');  
-        $v->have = 0;                     
-        $v->date_acquired = '2000-01-01';         
-        $v->edition = 0;          
-        $v->edition_date = '2000-01-01';           
-        $v->price_yen = 0;   
-        $v->price_usd = 0;
-        $v->location = '';                        
-        $v->updated_by = '1';
-        $v->save();
+        $b = new Book;
+        $b->title = $request->input('title');
+        $b->author_id = $request->input('author_id');
+        $b->publisher_id = $request->input('publisher_id');
+        $b->type_id = $request->input('type_id');
+        $b->isbn = $request->input('isbn');                      
+        //$v->updated_by = '1';
+        $b->save();
 
 
         return redirect('/home');          
@@ -76,10 +69,10 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function listDisplay() {
-           $volumes = Volume::orderBy('created_at','desc')->get();
+           $books = Book::orderBy('created_at','desc')->get();
 
             return view('admin.bookList')
-            ->with('volumes',$volumes);
+            ->with('books',$books);
     } 
 
     /**
@@ -88,12 +81,16 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function editDisplay($book_id) {
-            $volume = Volume::find($book_id);
-             $groups = Group::pluck('title','id');;
+        $book = Book::find($book_id);
+        $authors = Author::pluck('name','id');
+        $publishers = Publisher::pluck('name','id');
+        $types = Type::pluck('type','id');
 
-            return view('admin.bookEdit')
-            ->with('groups',$groups)
-            ->with('volume',$volume);
+        return view('admin.bookEdit')
+            ->with('authors',$authors)
+            ->with('publishers',$publishers)
+            ->with('types',$types)                        
+            ->with('book',$book);
     } 
 
 
@@ -103,20 +100,18 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request) {
-        $volume_id = $request->input('volume_id');
+        $book_id = $request->input('book_id');
 
-        $up = Volume::find($volume_id);
-        $up->group_id = $request->input('group_id');
-        $up->volume = $request->input('volume');        
-        $up->title_e = $request->input('title_e');
-        $up->title_j = $request->input('title_j');
-        $up->published_date = $request->input('published_date');
+        $up = Book::find($book_id);
+        $up->title = $request->input('title');
+        $up->author_id = $request->input('author_id');        
+        $up->publisher_id = $request->input('publisher_id');
+        $up->type_id = $request->input('type_id');
         $up->isbn = $request->input('isbn');
-        $up->original_price = $request->input('original_price');           
         $up->save();
 
 
-        return redirect('/home/book/edit/'.$volume_id);          
+        return redirect('/home/book/edit/'.$book_id);          
     } 
 
 
