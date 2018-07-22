@@ -16,6 +16,7 @@ use App\Group;
 use App\Pairing;
 use App\Note;
 use App\Resource;
+use App\Book;
 
 class PageController extends Controller{
     /**
@@ -318,5 +319,18 @@ class PageController extends Controller{
         return  view('pages.resources')
             ->with('resources',$resources);
     }       
+
+    /**
+     * Books
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function books(){
+        $books = Book::orderBy('created_at','desc')->get();
+
+        return  view('pages.books')
+        ->with('books',$books);
+    }  
+
 
 }

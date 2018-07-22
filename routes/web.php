@@ -30,6 +30,7 @@ Route::get('/projects','PageController@projects');
 Route::get('/doujin','PageController@doujin');
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
+Route::get('/books','PageController@books');
 //baseline Europe
 Route::get('/london','PageController@london');
 
