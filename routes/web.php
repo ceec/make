@@ -130,3 +130,11 @@ Route::get('/home/type/list','TypeController@listDisplay');
 //posting
 Route::post('/home/add/type','TypeController@add');
 Route::post('/home/edit/type','TypeController@edit');
+
+//projects
+Route::get('/home/project/add','ProjectController@addDisplay');
+Route::get('/home/project/edit/{type_id}','ProjectController@editDisplay');
+Route::get('/home/project/list','ProjectController@listDisplay');
+//posting
+Route::post('/home/add/project','ProjectController@add');
+Route::post('/home/edit/project','ProjectController@edit');
