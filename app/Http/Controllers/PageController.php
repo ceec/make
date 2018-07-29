@@ -17,6 +17,7 @@ use App\Pairing;
 use App\Note;
 use App\Resource;
 use App\Book;
+use App\Caterpillar;
 
 class PageController extends Controller{
     /**
@@ -332,5 +333,16 @@ class PageController extends Controller{
         ->with('books',$books);
     }  
 
+    /**
+     * Caterpillars
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function caterpillars(){
+        $caterpillars = Caterpillar::orderBy('created_at','desc')->get();
+
+        return  view('pages.caterpillars')
+        ->with('caterpillars',$caterpillars);
+    }  
 
 }
