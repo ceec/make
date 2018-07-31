@@ -32,7 +32,8 @@ Projects
 			<li><a href="/chelsea">Chelsea Doujin</a></li>
 			<li><a href="/manga">Manga Collected</a></li>
 			<li><a href="/wordcount">Wordcount</a></li>
-			<li><a href="/books">Books</a></li>			
+			<li><a href="/books">Books</a></li>		
+			<li><a href="/caterpillars">Caterpillars</a></li>			
 		</ul>
 
 		<h2>To move Over</h2>
