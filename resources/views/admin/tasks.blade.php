@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style> 
+.arrow {
+    display:inline;
+}
+</style>
 
  
  <div class="container">
@@ -21,10 +25,42 @@
         </div>
     </div>
 
-    <div class="row">  
-        <div class="col-md-6">
+
             <h2>Daily</h2>
-            @foreach($tasks as $task)
+            @foreach($dailytasks as $task)
+            <div class="row">  
+                <div class="col-md-12">
+                @if($task->status == '0')
+                    {!! Form::open(['url' => '/edit/task','class'=>'todo-complete']) !!}
+                        {!! Form::hidden('task_id',$task->id) !!} 
+                        {!! Form::hidden('status','1') !!} 
+                        {!! Form::submit('&#x2714;',['class'=>'btn-primary todo-complete-button','id'=>'content']) !!}
+                    {!! Form::close() !!}  
+                @endif   
+                
+                @if ($task->status == 0) 
+                    <small>{{date('F j g:i a',strtotime($task->created_at))}}</small>
+                @else
+                    <small>{{date('F j g:i a',strtotime($task->updated_at))}}</small>
+                @endif
+                {{$task->task}}
+                            <div class="pull-right">
+                                <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 
+                                {!! Form::open(['url' => '/task/move','class'=>'todo-complete']) !!}
+                                    {!! Form::hidden('task_id',$task->id) !!} 
+                                    {!! Form::hidden('list_id','1') !!} 
+                                    {!! Form::submit('&darr;',['class'=>'arrow','id'=>'content']) !!}
+                                {!! Form::close() !!}   
+                            </div>
+                            <br>
+                        </div>
+                    </div>    
+            @endforeach            
+  
+            <h2>General</h2>
+            @foreach($generaltasks as $task)
+            <div class="row">
+                <div class="col-md-12">            
                 @if($task->status == '0')
                     {!! Form::open(['url' => '/edit/task','class'=>'todo-complete']) !!}
                         {!! Form::hidden('task_id',$task->id) !!} 
@@ -42,23 +78,23 @@
 
                             <div class="pull-right">
                                 <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 
+                                {!! Form::open(['url' => '/task/move','class'=>'todo-complete']) !!}
+                                    {!! Form::hidden('task_id',$task->id) !!} 
+                                    {!! Form::hidden('list_id','2') !!} 
+                                    {!! Form::submit('&uarr;',['class'=>'arrow','id'=>'content']) !!}
+                                {!! Form::close() !!}                                  
                             </div>
                             <br>
-            @endforeach            
-        </div>
-        <div class="col-md-6">
-            <h2>Weekly</h2>
-            <h2>Random</h2>
-        </div>
-            
-
-
-
+                </div>
+            </div>                              
+            @endforeach             
 
 
     
     </div>
 </div>
+
+
 
 
 @endsection

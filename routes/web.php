@@ -73,6 +73,7 @@ Route::get('/home/tasks/{complete}','TaskController@tasks');
 
 Route::post('/add/task','TaskController@add');
 Route::post('/edit/task','TaskController@edit');
+Route::post('/task/move','TaskController@move');
 
 //purchases
 Route::get('/home/purchase/add','PurchaseController@addDisplay');
