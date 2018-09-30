@@ -24,6 +24,13 @@
     <li>Headset - Corsair Void Pro RGB USB</li>
     <li>Mouse - Logitech G502</li>
   </ul>
+  <h3>Software</h3>
+  <ul>
+    <li>Editor - <a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+    <li>Tasks - <a href="https://trello.com">Trello</a></li>
+    <li>Time Tracking - <a href="https://www.rescuetime.com">Rescue Time</a></li>
+    <li>Time Tracking - <a href="https://www.toggl.com">Toggl</a></li>
+  </ul>
   <h3>enstars.info</h3>
   <ul>
     <li>Framework - Laravel 5.3</li>
