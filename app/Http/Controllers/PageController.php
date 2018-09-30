@@ -345,4 +345,13 @@ class PageController extends Controller{
         ->with('caterpillars',$caterpillars);
     }  
 
+    /**
+     * What I use
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function use(){
+        return  view('pages.use');
+    }      
+
 }

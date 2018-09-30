@@ -34,6 +34,8 @@ Route::get('/books','PageController@books');
 Route::get('/caterpillars','PageController@caterpillars');
 //baseline Europe
 Route::get('/london','PageController@london');
+//use
+Route::get('/use','PageController@use');
 
 //notes
 Route::get('/notes','PageController@notes');
