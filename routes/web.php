@@ -142,3 +142,7 @@ Route::get('/home/project/list','ProjectController@listDisplay');
 //posting
 Route::post('/home/add/project','ProjectController@add');
 Route::post('/home/edit/project','ProjectController@edit');
+
+//wordcount
+Route::get('/home/wordcount','HomeController@wordcount');
+Route::post('/home/wordcount/update','HomeController@wordcountUpdate');

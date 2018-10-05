@@ -26,6 +26,13 @@
                         </div>                        
                     </div>
                     <hr>
+                    <h2>Tools</h2>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="/home/wordcount">Wordcount</a>
+                            </div>
+                        </div>
+                    <hr>
                     <h2>Database</h2>
                     <div class="row"> 
                         <div class="col-md-3">
