@@ -33,10 +33,10 @@ Projects
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title"><a href="/project/{{$project->url}}">{{$project->name}}</a></h5>
-							@if (count($project->recentStep) > 0)
-								<p class="card-text">{!! $project->recentStep[0]->name !!}</p>
-								<span>{{$project->recentStep[0]->updated_at}}</span>
-							@endif
+						
+								<p class="card-text"></p>
+						<span>{{date('F j, Y g:i a',strtotime($project->last_step_updated_at))}}</span>
+				
 						</div>
 					</div>
 				</div>			
@@ -60,3 +60,22 @@ Projects
 	</div>
 
 @endsection
+
+
+	<!--		<ul>
+			<li><a href="/movies">Movies Seen</a></li>
+			<li><a href="/london">London Trip</a></li>
+			<li><a href="/chelsea">Chelsea Doujin</a></li>
+			<li><a href="/manga">Manga Collected</a></li>
+			<li><a href="/wordcount">Wordcount</a></li>
+			<li><a href="/books">Books</a></li>		
+			<li><a href="/caterpillars">Caterpillars</a></li>			
+		</ul>-->
+
+<!--		<h2>To move Over</h2>
+		<ul>
+			<li>Doujin</li>
+			<li>Books</li>
+			<li>Rocks</li>	
+			<li>Trips</li>
+		</ul>-->

@@ -290,10 +290,29 @@ class PageController extends Controller{
      */
     public function projects(){
         //$projects = Project::all();
-         $projects = Project::select('projects.*')->join('projectsteps','projects.id','=','projectsteps.project_id')->orderBy('projectsteps.updated_at','desc')->get();
+        $projects = DB::select('SELECT *, (SELECT MAX(projectsteps.updated_at) FROM projectsteps WHERE projectsteps.project_id = projects.id) AS last_step_updated_at 
+FROM projects ORDER BY (
+    SELECT MAX(projectsteps.updated_at) FROM projectsteps WHERE projectsteps.project_id = projects.id ) DESC');
+    //dd($projects);
+         //$projects = Project::select('projects.*')->join('projectsteps','projects.id','=','projectsteps.project_id')->orderBy('projectsteps.updated_at','desc')->get();
          //2018-10-05 18:33
          //leaving this for now, they arent unique per project which i need to figure out
         
+// SELECT * FROM `projectsteps` WHERE project_id IN (
+//     SELECT DISTINCT(project.
+
+// SELECT *
+// FROM some_table 
+// WHERE relevant_field IN
+// (
+//     SELECT relevant_field
+//     FROM some_table
+//     GROUP BY relevant_field
+//     HAVING COUNT(*) > 1
+// )
+
+
+
         return view('pages.projects')
         ->with('projects',$projects);
     }
