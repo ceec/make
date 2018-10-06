@@ -19,31 +19,39 @@ Projects
 	padding-top: 10px;
 	padding-bottom: 5px;
 }
+
+.col-md-12 {
+	
+}
 </style>
 	<div class="container">
 		<h2>Projects</h2>
-		<ul>
-			@foreach($projects as $project)
-		<li><a href="/project/{{$project->url}}">{{$project->name}}</a></li>
+			<div class="row">
+			<?php $x=1; ?>
+			@foreach ($projects as $project)
+				<div class="col-sm-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title"><a href="/project/{{$project->url}}">{{$project->name}}</a></h5>
+							@if (count($project->recentStep) > 0)
+								<p class="card-text">{!! $project->recentStep[0]->name !!}</p>
+								<span>{{$project->recentStep[0]->updated_at}}</span>
+							@endif
+						</div>
+					</div>
+				</div>			
+      <?php
+        if ($x%4==0) {
+			?>
+				</div>
+				<br>
+				<div class="row">
+			<?php                            
+				}
+				$x++;
+			?>			
 			@endforeach
-			<li><a href="/counties">County Map</a></li>
-			<li><a href="/movies">Movies Seen</a></li>
-			<li><a href="/london">London Trip</a></li>
-			<li><a href="/chelsea">Chelsea Doujin</a></li>
-			<li><a href="/manga">Manga Collected</a></li>
-			<li><a href="/wordcount">Wordcount</a></li>
-			<li><a href="/books">Books</a></li>		
-			<li><a href="/caterpillars">Caterpillars</a></li>			
-		</ul>
-
-		<h2>To move Over</h2>
-		<ul>
-			<li>Wordcount</li>
-			<li>Doujin</li>
-			<li>Books</li>
-			<li>Rocks</li>	
-			<li>Trips</li>
-		</ul>
+			</div>
 		<h2>Websites</h2>
 		<ul>
 			<li><a href="https://enstars.info">enstars.info</a></li>

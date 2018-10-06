@@ -289,7 +289,10 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function projects(){
-        $projects = Project::all();
+        //$projects = Project::all();
+         $projects = Project::select('projects.*')->join('projectsteps','projects.id','=','projectsteps.project_id')->orderBy('projectsteps.updated_at','desc')->get();
+         //2018-10-05 18:33
+         //leaving this for now, they arent unique per project which i need to figure out
         
         return view('pages.projects')
         ->with('projects',$projects);

@@ -14,6 +14,14 @@ class Project extends Model
         return $this->hasMany('App\Projectstep');
     }
 
+     /**
+     * Get the most recent step
+     */
+    public function recentStep()
+    {
+        return $this->hasMany('App\Projectstep')->latest()->take(1);
+    }
+
 
      /**
      * Get the category
