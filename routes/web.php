@@ -82,9 +82,16 @@ Route::get('/home/purchase/add','PurchaseController@addDisplay');
 Route::get('/home/purchase/edit/{purchase_id}','PurchaseController@editDisplay');
 Route::get('/home/purchase/list','PurchaseController@listDisplay');
 //posting
-//posting
 Route::post('/add/purchase','PurchaseController@add');
 Route::post('/edit/purchase','PurchaseController@edit');
+
+//stores
+Route::get('/home/store/add','StoreController@addDisplay');
+Route::get('/home/store/edit/{store_id}','StoreController@editDisplay');
+Route::get('/home/store/list','StoreController@listDisplay');
+//posting
+Route::post('/add/store','StoreController@add');
+Route::post('/edit/store','StoreController@edit');
 
 ///volumes
 Route::get('/home/book/add','BookController@addDisplay');

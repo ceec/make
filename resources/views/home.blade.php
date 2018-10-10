@@ -34,11 +34,21 @@
                         </div>
                     <hr>
                     <h2>Database</h2>
-                    <div class="row"> 
+                    <div class="row">
                         <div class="col-md-3">
                             <h4>Purchases</h4>
                             <a href="/home/purchase/add">Add New Purchase</a><br>      
-                            <a href="/home/purchase/list">Edit Purchase</a>      
+                            <a href="/home/purchase/list">Edit Purchase</a>     
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Stores</h4>
+                            <a href="/home/store/add">Add New Store</a><br>      
+                            <a href="/home/store/list">Edit Store</a>                                 
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-md-3">
+ 
                         </div>
                         <div class="col-md-3">
                             <h4>Notes</h4>
