@@ -23,7 +23,7 @@
             </div>                                     
             <div class="form-group">
               <label for="price">Price</label>
-               {!! Form::number('price','',['class'=>'form-control','id'=>'price']) !!}
+               {!! Form::text('price','',['class'=>'form-control','id'=>'price']) !!}
             </div>      
               {!! Form::select('store_id',$stores,'',['class'=>'','id'=>'content']) !!}   <br>
               {!! Form::select('project_id',$projects,'',['class'=>'','id'=>'content']) !!}        <br>

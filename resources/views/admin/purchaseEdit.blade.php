@@ -16,7 +16,7 @@
             </div>                  
             <div class="form-group">
               <label for="s-name">Text</label>
-               {!! Form::number('price',$purchase->price,['class'=>'form-control','id'=>'content']) !!}
+               {!! Form::text('price',$purchase->price,['class'=>'form-control','id'=>'content']) !!}
             </div>    
               {!! Form::select('store_id',$stores,$purchase->store_id,['class'=>'','id'=>'content']) !!}   <br>
               {!! Form::select('project_id',$projects,$purchase->project_id,['class'=>'','id'=>'content']) !!}        <br>
