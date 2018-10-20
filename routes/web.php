@@ -46,6 +46,7 @@ Route::get('/note/{note_id}','PageController@note');
 ///data!
 Route::get('/data/counties','DataController@counties');
 Route::get('/data/words','DataController@words');
+Route::get('/data/grid/{project_id}','DataController@grid');
 
 
 ///authentication

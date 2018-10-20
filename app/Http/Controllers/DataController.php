@@ -9,6 +9,7 @@ use App\Volume;
 use App\County;
 use App\Item;
 use App\Wordcount;
+use App\Projectstep;
 
 class DataController extends Controller
 {
@@ -46,15 +47,37 @@ class DataController extends Controller
         $words = Wordcount::where('updated_at','!=','0000-00-00 00:00:00')->get();
 
 
-        foreach ($words as $word) {
-            //remove time
-            $word->updated = date('Y-m-d',strtotime($word->updated_at));
-        }
+        // foreach ($words as $key => $word) {
+        //     //remove time
+        //     $word->updated = date('Y-m-d',strtotime($word->updated_at));
+        //     if ($key == 'text') {
+        //         unset($words[$key]);
+        //     }
+            
+        // }
 
 
         echo json_encode($words);
     }
 
+    
+     /**
+     * project grids
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function grid($project_id){
 
+        $days = Projectstep::where('project_id','=',$project_id)->orderBy('updated_at','DESC')->get();
+
+
+        foreach ($days as $day) {
+            //remove time
+            $day->updated = date('Y-m-d',strtotime($day->completed_at));
+        }
+
+
+        echo json_encode($days);
+    }
 
 }
