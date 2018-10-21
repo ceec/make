@@ -45,7 +45,7 @@ class BlogController extends Controller {
      */
     public function addDisplay() {
             //get list of projects to choose what one to work with
-            $projects = Project::pluck('name','id');;
+            $projects = Project::orderBy('name','ASC')->pluck('name','id');
 
 
             return view('admin.blogAdd')
