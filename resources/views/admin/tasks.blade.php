@@ -6,9 +6,8 @@
     display:inline;
 }
 </style>
-
- 
  <div class="container">
+     <!-- header row -->
     <div class="row">
         <div class="col-md-3">    
             {!! Form::open(['url' => '/add/task']) !!}
@@ -25,7 +24,7 @@
         </div>
     </div>
 
-
+    @if($status != 'complete')
             <h2>Daily</h2>
             @foreach($dailytasks as $task)
             <div class="row">  
@@ -61,13 +60,11 @@
             @foreach($generaltasks as $task)
             <div class="row">
                 <div class="col-md-12">            
-                @if($task->status == '0')
                     {!! Form::open(['url' => '/edit/task','class'=>'todo-complete']) !!}
                         {!! Form::hidden('task_id',$task->id) !!} 
                         {!! Form::hidden('status','1') !!} 
                         {!! Form::submit('&#x2714;',['class'=>'btn-primary todo-complete-button','id'=>'content']) !!}
                     {!! Form::close() !!}  
-                @endif   
                 
                 @if ($task->status == 0) 
                     <small>{{date('F j g:i a',strtotime($task->created_at))}}</small>
@@ -88,9 +85,26 @@
                 </div>
             </div>                              
             @endforeach             
-
+        @endif
 
     
+    <!-- separate UI for completed with less features -->
+    @if($status == 'complete')
+        <h2>Completed</h2>
+         @foreach($generaltasks as $task)
+            <div class="row">  
+                <div class="col-md-12">
+                <small>{{date('F j g:i a',strtotime($task->updated_at))}}</small>
+                {{$task->task}}
+                 <div class="pull-right">
+                    <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 
+                 </div>
+                </div>
+            </div>
+         @endforeach
+    @endif
+
+
     </div>
 </div>
 
