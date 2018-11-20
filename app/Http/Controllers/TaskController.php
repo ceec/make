@@ -50,6 +50,22 @@ class TaskController extends Controller {
 
 
     /**
+     * Display onet ask
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function task($task_id) {
+        $task = Task::find($task_id);
+
+        $allprojects = Project::pluck('name','id');
+
+        return view('admin.task')
+            ->with('task',$task)
+            ->with('allprojects',$allprojects);
+    }
+
+
+    /**
      * Add task
      *
      * @return \Illuminate\Http\Response

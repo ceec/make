@@ -42,7 +42,7 @@
                 @else
                     <small>{{date('F j g:i a',strtotime($task->updated_at))}}</small>
                 @endif
-                {{$task->task}}
+                <a href="/home/task/{{$task->id}}">{{$task->task}}</a>
                             <div class="pull-right">
                                 <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 
                                 {!! Form::open(['url' => '/task/move','class'=>'todo-complete']) !!}
@@ -71,7 +71,7 @@
                 @else
                     <small>{{date('F j g:i a',strtotime($task->updated_at))}}</small>
                 @endif
-                {{$task->task}}
+                <a href="/home/task/{{$task->id}}">{{$task->task}}</a>
 
                             <div class="pull-right">
                                 <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 

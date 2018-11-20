@@ -74,6 +74,9 @@ Route::post('/edit/note','NoteController@edit');
 Route::get('/home/tasks','TaskController@tasks');
 Route::get('/home/tasks/{complete}','TaskController@tasks');
 
+//one specific task
+Route::get('/home/task/{task_id}','TaskController@task');
+
 Route::post('/add/task','TaskController@add');
 Route::post('/edit/task','TaskController@edit');
 Route::post('/task/move','TaskController@move');
