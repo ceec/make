@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use App\Project;
+use App\Tasknote;
 
 use Carbon\Carbon;
 
@@ -57,10 +58,13 @@ class TaskController extends Controller {
     public function task($task_id) {
         $task = Task::find($task_id);
 
+        $notes = Tasknote::where('task_id','=',$task_id)->get();
+
         $allprojects = Project::pluck('name','id');
 
         return view('admin.task')
             ->with('task',$task)
+            ->with('notes',$notes)
             ->with('allprojects',$allprojects);
     }
 
@@ -127,5 +131,23 @@ class TaskController extends Controller {
 
         return redirect('/home/tasks');           
     } 
+
+    /**
+     * Add task note
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addNote(Request $request) {
+        $task_id = $request->input('task_id');
+
+        $t = new Tasknote;
+        $t->task_id = $task_id;
+        $t->note = $request->input('note');
+        $t->save();
+
+        return redirect('/home/task/'.$task_id);          
+    } 
+
+
 
 }

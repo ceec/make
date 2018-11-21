@@ -95,7 +95,7 @@
             <div class="row">  
                 <div class="col-md-12">
                 <small>{{date('F j g:i a',strtotime($task->updated_at))}}</small>
-                {{$task->task}}
+                <a href="/home/task/{{$task->id}}">{{$task->task}}</a>
                  <div class="pull-right">
                     <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 
                  </div>

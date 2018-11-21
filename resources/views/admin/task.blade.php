@@ -26,8 +26,14 @@
 
     <!-- individual task -->
     <h2>{{$task->task}}</h2>
-
     <strong>Created: {{$task->created_at}}</strong>
+    <hr>
+
+    @foreach($notes as $note)
+      <p>{{$note->created_at}} {{$note->note}}</p>
+    @endforeach
+
+    
     {!! Form::open(['url' => '/add/task/note']) !!}
     {!! Form::textarea('note','',['class'=>'','id'=>'note']) !!}
       {!! Form::hidden('task_id',$task->id,['class'=>'','id'=>'task_id']) !!}

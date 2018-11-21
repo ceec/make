@@ -80,6 +80,8 @@ Route::get('/home/task/{task_id}','TaskController@task');
 Route::post('/add/task','TaskController@add');
 Route::post('/edit/task','TaskController@edit');
 Route::post('/task/move','TaskController@move');
+Route::post('/add/task/note','TaskController@addNote');
+
 
 //purchases
 Route::get('/home/purchase/add','PurchaseController@addDisplay');
