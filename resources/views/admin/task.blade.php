@@ -30,7 +30,7 @@
     <hr>
 
     @foreach($notes as $note)
-      <p>{{$note->created_at}} {{$note->note}}</p>
+      <p>{{$note->created_at}} {!! $note->note !!}</p>
     @endforeach
 
     
