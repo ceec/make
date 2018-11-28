@@ -23,7 +23,12 @@
                             <h4>Project</h4>
                             <a href="/home/project/add">Add New Project</a><br>      
                             <a href="/home/project/list">Edit Projects</a>      
-                        </div>                        
+                        </div>   
+                        <div class="col-md-3">  
+                            <h4>Resource</h4>
+                            <a href="/home/resource/add">Add New Resource</a><br>      
+                            <a href="/home/resource/list">Edit Resources</a>      
+                        </div>                                                
                     </div>
                     <hr>
                     <h2>Tools</h2>
