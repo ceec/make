@@ -20,7 +20,7 @@
     <li>Video Card - EVGA GeForce GTX 560</li>
     <li>Cooling - Noctua NH-D15 6 heatpipe with Dual NF-A15 140mm fans</li>
     <li>SSD - Samsung 500GB</li>
-    <li>Keyboard - Corsair Gaming K70 LUX RGB Cherry MX</li>
+    <li>Keyboard - Corsair Gaming K70 LUX RGB Cherry MX RGB Red</li>
     <li>Headset - Corsair Void Pro RGB USB</li>
     <li>Mouse - Logitech G502</li>
   </ul>
