@@ -8,6 +8,7 @@ use App\Book;
 use App\Author;
 use App\Publisher;
 use App\Type;
+use App\Group;
 
 use Auth;
 
@@ -34,10 +35,15 @@ class BookController extends Controller {
         $authors = Author::pluck('name','id');
         $publishers = Publisher::pluck('name','id');
         $types = Type::pluck('type','id');
+        $groups = Group::pluck('title','id');
+
+        //add none option for ones that dont beong to a series
+        $groups->prepend('None');
 
             return view('admin.bookAdd')
             ->with('types',$types)
             ->with('publishers',$publishers)
+            ->with('groups',$groups)             
             ->with('authors',$authors);
     } 
 
@@ -54,7 +60,15 @@ class BookController extends Controller {
         $b->author_id = $request->input('author_id');
         $b->publisher_id = $request->input('publisher_id');
         $b->type_id = $request->input('type_id');
-        $b->isbn = $request->input('isbn');                      
+        $b->group_id = $request->input('group_id');
+        $b->isbn = $request->input('isbn');
+        $b->original_price = 0;
+        $b->date_acquired = '1999-01-1';
+        $b->edition = 0;
+        $b->edition_date = '1999-01-01';
+        $b->price_yen = 0;
+        $b->price_usd = 0;
+        $b->location = '';                   
         //$v->updated_by = '1';
         $b->save();
 
@@ -85,11 +99,16 @@ class BookController extends Controller {
         $authors = Author::pluck('name','id');
         $publishers = Publisher::pluck('name','id');
         $types = Type::pluck('type','id');
+        $groups = Group::pluck('title','id');
+
+        //add none option for ones that dont beong to a series
+        $groups->prepend('None');
 
         return view('admin.bookEdit')
             ->with('authors',$authors)
             ->with('publishers',$publishers)
-            ->with('types',$types)                        
+            ->with('types',$types)  
+            ->with('groups',$groups)                      
             ->with('book',$book);
     } 
 
@@ -107,7 +126,15 @@ class BookController extends Controller {
         $up->author_id = $request->input('author_id');        
         $up->publisher_id = $request->input('publisher_id');
         $up->type_id = $request->input('type_id');
+        $up->group_id = $request->input('group_id');
         $up->isbn = $request->input('isbn');
+        $up->original_price = $request->input('original_price');
+        $up->date_acquired = $request->input('date_acquired');
+        $up->edition = $request->input('edition');
+        $up->edition_date = $request->input('edition_date');
+        $up->price_yen = $request->input('price_yen');
+        $up->price_usd = $request->input('price_usd');
+        $up->location = $request->input('location');      
         $up->save();
 
 

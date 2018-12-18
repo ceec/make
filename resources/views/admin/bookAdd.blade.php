@@ -32,7 +32,11 @@
         <div class="form-group">
           <label for="type">Type</label>               
           {!! Form::select('type_id',$types,'',['class'=>'form-control','id'=>'type']) !!}       
-        </div>                   
+        </div>   
+        <div class="form-group">
+          <label for="group">Group</label>               
+          {!! Form::select('group_id',$groups,'',['class'=>'form-control','id'=>'group']) !!}       
+        </div>                           
         <div class="form-group">
           <label for="isbn">ISBN</label>
             {!! Form::text('isbn','',['class'=>'form-control','id'=>'isbn']) !!}
