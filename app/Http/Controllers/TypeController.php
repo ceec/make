@@ -39,7 +39,8 @@ class TypeController extends Controller {
      */
     public function add(Request $request) {
         $g = new Type;
-        $g->type = $request->input('type');                   
+        $g->type = $request->input('type');    
+        $g->url = $request->input('url');                   
         $g->updated_by = '1';
         $g->save();
 
@@ -81,7 +82,8 @@ class TypeController extends Controller {
         $type_id = $request->input('type_id');
 
         $up = Type::find($type_id);
-        $up->type = $request->input('type');             
+        $up->type = $request->input('type');   
+        $up->url = $request->input('url');          
         $up->save();
 
 

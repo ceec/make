@@ -20,7 +20,11 @@
         <div class="form-group">
           <label for="type">Type</label>               
           {!! Form::text('type','',['class'=>'form-control','id'=>'type']) !!}      
-        </div>                                                                                                  
+        </div>  
+        <div class="form-group">
+          <label for="url">url</label>               
+          {!! Form::text('url','',['class'=>'form-control','id'=>'url']) !!}      
+        </div>                                                                                                          
       </div>
       <div class="col-md-6"> 
       </div>
