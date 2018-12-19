@@ -24,10 +24,10 @@ ccmakesthings
           <h5 class="card-title">{{$book->title}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">by {{$book->author->name}}</h6>
         <img class="img-fluid" src="/images/books/{{$book->id}}.jpg"><br>
-          Type: <a href="#" class="card-link">{{$book->type->type}}</a><br>
+        Type: <a href="/books/type/{{$book->type->url}}" class="card-link">{{$book->type->type}}</a><br>
           Publisher: <a href="#" class="card-link">{{$book->publisher->name}}</a><br>
           @if($book->group_id != 0)
-        Group: <a href="#" class="card-link">{{$book->group->title}}</a>
+        Group: <a href="/books/group/{{$book->group->url}}" class="card-link">{{$book->group->title}}</a>
           @endif
         </div>
       </div>

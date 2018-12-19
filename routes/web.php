@@ -30,7 +30,13 @@ Route::get('/projects','PageController@projects');
 Route::get('/doujin','PageController@doujin');
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
+
 Route::get('/books','PageController@books');
+Route::get('/books/type/{type}','PageController@bookTypes');
+Route::get('/books/group/{group}','PageController@bookGroups');
+
+
+
 Route::get('/caterpillars','PageController@caterpillars');
 //baseline Europe
 Route::get('/london','PageController@london');

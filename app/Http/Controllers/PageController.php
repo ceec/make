@@ -18,6 +18,7 @@ use App\Note;
 use App\Resource;
 use App\Book;
 use App\Caterpillar;
+use App\Type;
 
 class PageController extends Controller{
     /**
@@ -360,6 +361,36 @@ class PageController extends Controller{
         return  view('pages.books')
         ->with('books',$books);
     }  
+
+    /**
+     * Book types
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bookTypes($type_name){
+        //get the id from the type, I keep using this function, should generalize it?
+        $type = Type::where('url','=',$type_name)->first();
+
+        $books = Book::where('type_id','=',$type->id)->orderBy('created_at','desc')->get();
+
+        return  view('pages.books')
+        ->with('books',$books);
+    }  
+
+
+    /**
+     * Book groups
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bookGroups($group_name){
+        $group = Group::where('url','=',$group_name)->first();
+
+        $books = Book::where('group_id','=',$group->id)->orderBy('created_at','desc')->get();
+
+        return  view('pages.books')
+        ->with('books',$books);
+    } 
 
     /**
      * Caterpillars
