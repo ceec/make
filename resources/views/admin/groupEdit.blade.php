@@ -22,7 +22,11 @@
         <div class="form-group">
           <label for="project">Type</label>
           {!! Form::select('type_id', $types,$group->type_id,['class'=>'form-control', 'id'=>'project','placeholder' => 'Type']) !!} 
-        </div>                                                                        
+        </div>   
+        <div class="form-group">
+          <label for="url">url</label>               
+          {!! Form::text('url',$group->url,['class'=>'form-control','id'=>'url']) !!}      
+        </div>                                                                                
       </div>
       <div class="col-md-6"> 
       </div>

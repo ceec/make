@@ -54,7 +54,8 @@ class GroupController extends Controller {
         $g->title = $request->input('title');
         $g->author_id = $request->input('author_id');
         $g->publisher_id = $request->input('publisher_id');
-        $g->type_id = $request->input('type_id');                      
+        $g->type_id = $request->input('type_id'); 
+        $g->url = $request->input('url');                      
         $g->updated_by = '1';
         $g->save();
 
@@ -108,7 +109,8 @@ class GroupController extends Controller {
         $up->title = $request->input('title');        
         $up->author_id = $request->input('author_id');
         $up->publisher_id = $request->input('publisher_id');
-        $up->type_id = $request->input('type_id');       
+        $up->type_id = $request->input('type_id');    
+        $up->url = $request->input('url');     
         $up->save();
 
 
