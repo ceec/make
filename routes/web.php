@@ -35,6 +35,8 @@ Route::get('/books','PageController@books');
 Route::get('/books/type/{type}','PageController@bookTypes');
 Route::get('/books/group/{group}','PageController@bookGroups');
 
+//search books
+Route::get('/books/search/{query}','PageController@bookSearch');
 
 
 Route::get('/caterpillars','PageController@caterpillars');

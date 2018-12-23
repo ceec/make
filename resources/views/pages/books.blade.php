@@ -17,6 +17,15 @@ ccmakesthings
 
 </style>
 	<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        {!! Form::open(['url' => '/books/search']) !!}
+        {!! Form::text('query','',['class'=>'form-control','id'=>'store','placeholder'=>'Search']) !!}                                                                      
+        {!! Form::submit('Search') !!}
+        {!! Form::close() !!}
+      </div>
+    </div>
+    <br>
     <div class="row">              
     @foreach($books as $book)
       <div class="card col-md-3">

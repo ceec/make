@@ -363,6 +363,19 @@ class PageController extends Controller{
     }  
 
     /**
+     * Book search
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bookSearch($query){
+        //how to find a book with laravel a %LIKE%
+        $books = Book::orderBy('created_at','desc')->get();
+
+        return  view('pages.books')
+        ->with('books',$books);
+    }  
+
+    /**
      * Book types
      *
      * @return \Illuminate\Http\Response
