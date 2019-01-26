@@ -55,7 +55,10 @@ class DataController extends Controller
         //     }
             
         // }
-
+        foreach ($words as $word) {
+            //remove time
+            $word->updated = date('Y-m-d',strtotime($word->updated_at));
+        }
 
         echo json_encode($words);
     }
