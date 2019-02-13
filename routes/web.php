@@ -31,6 +31,9 @@ Route::get('/doujin','PageController@doujin');
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 
+//genealogy
+Route::get('/genealogy','GenealogyController@tree');
+
 Route::get('/books','PageController@books');
 Route::get('/books/type/{type}','PageController@bookTypes');
 Route::get('/books/group/{group}','PageController@bookGroups');
