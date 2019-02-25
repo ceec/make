@@ -46,14 +46,6 @@
                     <small>{{date('F j Y g:i a',strtotime($task->updated_at))}}</small>
                 @endif
                 <a href="/home/task/{{$task->id}}">{{$task->task}}</a>
-                            <div class="pull-right">
-                                <span class="badge badge-primary project-color-{{$task->project_id}}">{{$task->project->name}}</span> 
-                                {!! Form::open(['url' => '/task/move','class'=>'todo-complete']) !!}
-                                    {!! Form::hidden('task_id',$task->id) !!} 
-                                    {!! Form::hidden('list_id','1') !!} 
-                                    {!! Form::submit('&darr;',['class'=>'arrow','id'=>'content']) !!}
-                                {!! Form::close() !!}   
-                            </div>
                             <br>
                         </div>
                     </div>    
