@@ -32,4 +32,13 @@ class Project extends Model
     }    
 
 
+     /**
+     * Get the tasks
+     */
+    public function tasks()
+    {
+        return $this->hasMany('App\Task')->where('status','=',0)->latest();
+    }    
+
+
 }

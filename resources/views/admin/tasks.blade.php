@@ -20,6 +20,9 @@
             <a href="/home/tasks"><h2>To Do</h2></a>
         </div>
         <div class="col-md-3">
+            <a href="/home/tasks/project"><h2>By Project</h2></a>
+        </div>        
+        <div class="col-md-3">
             <a href="/home/tasks/complete"><h2>Completed</h2></a>
         </div>
     </div>

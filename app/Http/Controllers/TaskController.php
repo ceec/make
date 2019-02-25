@@ -50,6 +50,31 @@ class TaskController extends Controller {
     } 
 
 
+
+    /**
+     * Display all the tasks by project
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function tasksByProject() {
+        $projects = Project::all();
+                
+        //$generaltasks = Task::where('status','=',0)->where('list_id','=',1)->orderBy('created_at','desc')->get();
+        //$dailytasks = Task::where('status','=',0)->where('list_id','=',2)->orderBy('created_at','desc')->get();
+             
+           
+        $allprojects = Project::pluck('name','id');
+
+            return view('admin.tasksByProject')
+               // ->with('generaltasks',$generaltasks)
+               // ->with('status',$status)
+               // ->with('dailytasks',$dailytasks)
+               ->with('allprojects',$allprojects)
+                ->with('projects',$projects);
+    } 
+
+
+
     /**
      * Display onet ask
      *

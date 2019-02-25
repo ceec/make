@@ -23,6 +23,7 @@
     <div id="person"></div>
     <script>
       var firstName = '<?php print $person->first_name; ?>';
+      var lastName = '<?php print $person->last_name; ?>';
     </script>
     <script>
       //Draw the Rectangle

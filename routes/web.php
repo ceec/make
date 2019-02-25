@@ -83,6 +83,7 @@ Route::post('/edit/note','NoteController@edit');
 
 //to do list
 Route::get('/home/tasks','TaskController@tasks');
+Route::get('/home/tasks/project','TaskController@tasksByProject');
 Route::get('/home/tasks/{complete}','TaskController@tasks');
 
 //one specific task
