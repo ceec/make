@@ -406,6 +406,18 @@ class PageController extends Controller{
     } 
 
     /**
+     * Bookshelf
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bookshelf(){
+        $books = Book::orderBy('created_at','desc')->get();
+
+        return  view('pages.bookshelf')
+        ->with('books',$books);
+    }  
+
+    /**
      * Caterpillars
      *
      * @return \Illuminate\Http\Response
