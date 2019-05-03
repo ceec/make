@@ -20,22 +20,6 @@
         <div class="form-group">
           <label for="title">Title</label>
             {!! Form::text('title','',['class'=>'form-control','id'=>'title']) !!}
-        </div> 
-        <div class="form-group">
-          <label for="author">Author</label>               
-          {!! Form::select('author_id',$authors,'',['class'=>'form-control','id'=>'author']) !!}       
-        </div>   
-        <div class="form-group">
-          <label for="publisher">Publisher</label>               
-          {!! Form::select('publisher_id',$publishers,'',['class'=>'form-control','id'=>'publisher']) !!}       
-        </div>   
-        <div class="form-group">
-          <label for="type">Type</label>               
-          {!! Form::select('type_id',$types,'',['class'=>'form-control','id'=>'type']) !!}       
-        </div>   
-        <div class="form-group">
-          <label for="group">Group</label>               
-          {!! Form::select('group_id',$groups,'',['class'=>'form-control','id'=>'group']) !!}       
         </div>                           
         <div class="form-group">
           <label for="isbn">ISBN</label>

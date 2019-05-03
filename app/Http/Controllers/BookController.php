@@ -53,14 +53,13 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function add(Request $request) {
-
-
+        
         $b = new Book;
         $b->title = $request->input('title');
-        $b->author_id = $request->input('author_id');
-        $b->publisher_id = $request->input('publisher_id');
-        $b->type_id = $request->input('type_id');
-        $b->group_id = $request->input('group_id');
+        $b->author_id = 0;
+        $b->publisher_id = 0;
+        $b->type_id = 0;
+        $b->group_id = 0;
         $b->isbn = $request->input('isbn');
         $b->original_price = 0;
         $b->date_acquired = '1999-01-1';
