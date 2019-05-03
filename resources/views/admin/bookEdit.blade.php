@@ -71,7 +71,11 @@
         <div class="form-group">
           <label for="location">Location Bought</label>
             {!! Form::text('location',$book->location,['class'=>'form-control','id'=>'location']) !!}
-        </div>                                                        
+        </div>  
+        <div class="form-group">
+          <label for="read">Read</label>
+            {!! Form::text('read',$book->read,['class'=>'form-control','id'=>'read']) !!}
+        </div>                                                                
       </div>
    	</div>                                                   
       {!! Form::hidden('book_id',$book->id) !!}                                                                       

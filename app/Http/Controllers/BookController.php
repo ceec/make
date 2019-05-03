@@ -53,7 +53,7 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function add(Request $request) {
-        
+
         $b = new Book;
         $b->title = $request->input('title');
         $b->author_id = 0;
@@ -62,6 +62,7 @@ class BookController extends Controller {
         $b->group_id = 0;
         $b->isbn = $request->input('isbn');
         $b->original_price = 0;
+        $b->read = 0;
         $b->date_acquired = '1999-01-1';
         $b->edition = 0;
         $b->edition_date = '1999-01-01';
@@ -128,6 +129,7 @@ class BookController extends Controller {
         $up->group_id = $request->input('group_id');
         $up->isbn = $request->input('isbn');
         $up->original_price = $request->input('original_price');
+        $up->read = $request->input('read');
         $up->date_acquired = $request->input('date_acquired');
         $up->edition = $request->input('edition');
         $up->edition_date = $request->input('edition_date');
