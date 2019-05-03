@@ -411,9 +411,11 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function bookshelf(){
-        $books = Book::orderBy('created_at','desc')->get();
+        $books = Book::where('read','=',0)->orderBy('created_at','desc')->get();
+        $bookjson = json_encode($books);
 
         return  view('pages.bookshelf')
+        ->with('bookjson',$bookjson)
         ->with('books',$books);
     }  
 
