@@ -43,13 +43,26 @@ ccmakesthings
       var x = 30;
       var textx = 0;
 for (const key in bookjson) {
-        var text = svgContainer.append('text').text(bookjson[key]['title'])
+  var title = bookjson[key]['title'];
+
+  var length = title.length;
+  var fontSize = 18;
+
+  if (length > 20) {
+    var difference = length - 20;
+
+    fontSize = fontSize - (difference/2);
+
+  }
+
+
+        var text = svgContainer.append('text').text(title)
                         //.attr("x", textx+5)
                         .attr("x", x)
                         .attr("y", 0)
                         .style("stroke", '#074886')       
                         .attr("transform", "rotate(90 20 "+textx+")")               
-                        .attr("font-size", 18)
+                        .attr("font-size", fontSize)
                         .attr('fill', 'black');
 
                         textx = textx+40;    
