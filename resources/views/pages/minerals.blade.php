@@ -18,7 +18,7 @@ Rocks
                 <a href="rocks/{{$mineral->name}}"><img class="img-fluid" src="/images/rocks/{{$mineral->image[0]}}"></a>
                 <div class="card-body">
                   <h5 class="card-title">{{$mineral->name}} <small class="pull-right">{!! $mineral->formula !!}</small></h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"></p>
                 </div>
               </div>            
             </div>
