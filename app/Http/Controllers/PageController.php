@@ -19,6 +19,9 @@ use App\Resource;
 use App\Book;
 use App\Caterpillar;
 use App\Type;
+//rocks
+use App\Mineral;
+use App\Item;
 
 class PageController extends Controller{
     /**
@@ -438,6 +441,43 @@ class PageController extends Controller{
      */
     public function use(){
         return  view('pages.use');
-    }      
+    }   
+    
+    /**
+     * Rocks
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function rocks()
+    {
+        //get all the minerals
+        $minerals = Mineral::orderBy('name','asc')->paginate(50);
+
+        //get a picture
+        foreach ($minerals as $min) {
+            $min->image = Item::where('mineral_id','=',$min->id)->pluck('image');   
+        }   
+
+        return view('pages.minerals')
+        ->with('minerals',$minerals);
+    }
+
+    /**
+     * show each rock
+     *
+     * @return \Illuminate\Http\Response
+     */    
+    public function showMinerals($mineral_name)
+    {
+
+        //get the mineral id
+        $m = Mineral::where('name','=',$mineral_name)->first();
+
+        //get all the items
+        $items = Item::where('mineral_id','=',$m->id)->paginate(18);
+
+        return view('pages.rocks')
+        ->with('items',$items);
+    }
 
 }

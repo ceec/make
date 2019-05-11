@@ -31,6 +31,9 @@ Route::get('/doujin','PageController@doujin');
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
+//rocks
+Route::get('/rocks', 'PageController@rocks');
+Route::get('rocks/{mineral_name}', 'PageController@showMinerals');
 
 //genealogy
 Route::get('/genealogy','GenealogyController@tree');
