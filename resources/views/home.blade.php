@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
@@ -31,11 +31,18 @@
                         </div>                                                
                     </div>
                     <hr>
-                    <h2>Tools</h2>
                         <div class="row">
                             <div class="col-md-3">
+                                <h2>Tools</h2>
                                 <a href="/home/wordcount">Wordcount</a>
                             </div>
+                            <div class="col-md-3">
+                                <h2>Rocks</h2>
+                                <a href="/home/item/add">Add Item</a><br>
+                                <a href="/home/item/list">Edit Item</a><br>
+                                <a href="/home/mineral/add">Add Mineral</a><br>
+                                <a href="/home/mineral/list">Edit Mineral</a>                                
+                            </div>                            
                         </div>
                     <hr>
                     <h2>Database</h2>
