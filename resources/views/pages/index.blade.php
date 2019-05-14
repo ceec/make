@@ -44,7 +44,7 @@ ccmakesthings
 
 			var svg = d3.select("#project-grid")
 				.selectAll("svg")
-				.data(d3.range(2018, 2019))
+				.data(d3.range(2019, 2020))
 				.enter().append("svg")
 					.attr("width", width)
 					.attr("height", height)
