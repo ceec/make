@@ -13,6 +13,7 @@ ccmakesthings
     <script>
         //Make an SVG Container
         var svgContainer = d3.select("#bookshelf").append("svg")
+                              .attr("xlink","http://www.w3.org/1999/xlink")
                               .attr("width", 1200)
                               .attr("height", 200);     
 
@@ -54,6 +55,10 @@ for (const key in bookjson) {
     fontSize = fontSize - (difference/2);
 
   }
+
+
+  //add link to title
+  //title = '<a xlink:href="test.com">'+title+'</a>';
 
 
         var text = svgContainer.append('text').text(title)
