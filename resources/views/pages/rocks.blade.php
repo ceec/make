@@ -23,7 +23,7 @@ Rocks
                   <h3 class="panel-title">{{$item->name}}</h3>
                 </div>
                 <div class="panel-body">
-                <img class="img-responsive" src="/images/rocks/{{$item->image}}"><br>
+                <img class="img-fluid" src="/images/rocks/{{$item->image}}"><br>
                 {{$item->source_location}}<br>
                 {{$item->buy_location}}
                 </div>
