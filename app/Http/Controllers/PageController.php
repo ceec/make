@@ -455,7 +455,14 @@ class PageController extends Controller{
 
         //get a picture
         foreach ($minerals as $min) {
-            $min->image = Item::where('mineral_id','=',$min->id)->pluck('image');   
+            $image = Item::where('mineral_id','=',$min->id)->pluck('image')->toArray();
+            if (isset($image[0])) {
+                $test = $image[0];
+            } else {
+                $test = 'example.jpg';
+            }
+            
+            $min->image = $test;
         }   
 
         return view('pages.minerals')
