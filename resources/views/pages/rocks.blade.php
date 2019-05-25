@@ -6,8 +6,11 @@ Rocks
 @stop
 
 @section('content')
-
-@section('content')
+<style>
+    .row {
+        margin-bottom: 15px;
+    }
+</style>
 <div class="container">
     <div class="row">
         <h2>Rocks</h2>
