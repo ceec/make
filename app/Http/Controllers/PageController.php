@@ -23,6 +23,8 @@ use App\Type;
 use App\Mineral;
 use App\Item;
 
+use App\Weather;
+
 class PageController extends Controller{
     /**
      * Display the homepage.
@@ -486,5 +488,28 @@ class PageController extends Controller{
         return view('pages.rocks')
         ->with('items',$items);
     }
+
+    /**
+     * Weather
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function weather(Request $request){
+        //add weather data to db
+        $w = new Weather;
+        $w->temperature = $request->input('temperature');
+        $w->humidity = $request->input('humidity');
+        $w->pressure = $request->input('pressure');
+        $w->windspeed = $request->input('windspeed');
+        $w->save();
+
+        //get stats
+        $weather = Weather::all();
+
+        return  view('pages.weather')
+        ->with('weather',$weather);
+    }  
+
+
 
 }

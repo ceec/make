@@ -31,6 +31,10 @@ Route::get('/doujin','PageController@doujin');
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
+
+//weather endpoint
+Route::get('/weather','PageController@weather');
+
 //rocks
 Route::get('/rocks', 'PageController@rocks');
 Route::get('rocks/{mineral_name}', 'PageController@showMinerals');
