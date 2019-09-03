@@ -511,5 +511,18 @@ class PageController extends Controller{
     }  
 
 
+     /**
+     * Current Weather
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function currentWeather(){
+        //get stats
+        $weather = Weather::all();
+
+        return  view('pages.weathercurrent')
+        ->with('weather',$weather);
+    }     
+
 
 }

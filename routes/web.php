@@ -34,6 +34,7 @@ Route::get('/bookshelf','PageController@bookshelf');
 
 //weather endpoint
 Route::get('/weather','PageController@weather');
+Route::get('/currentweather','PageController@currentWeather');
 
 //rocks
 Route::get('/rocks', 'PageController@rocks');
