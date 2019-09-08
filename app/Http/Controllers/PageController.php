@@ -518,7 +518,7 @@ class PageController extends Controller{
      */
     public function currentWeather(){
         //get stats
-        $weather = Weather::all();
+        $weather = Weather::orderBy('created_at','DESC')->get();
 
         return  view('pages.weathercurrent')
         ->with('weather',$weather);
