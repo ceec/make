@@ -4,12 +4,11 @@
 
 @section('content')
 <div class="container">
-  <h1>Weather</h1>
+  <br>
+  <h1>Current Weather at {{date('F n, Y G:i',strtotime($current->created_at))}}</h1>
 
-  @foreach($weather as $data)
-{{$data->created_at}} Temperature: {{$data->temperature}} Humidity: {{$data->humidity}} Pressure: {{$data->pressure}} Windspeed: {{$data->windspeed}} <br>
-
-
-  @endforeach
+  <h2>Temperature: {{$current->temperature}} &deg;C</h2>
+  <h2>Humidity: {{$current->humidity}}%</h2>
+  <h2>Pressure: {{$current->pressure}} mb</h2>
 
 @endsection
