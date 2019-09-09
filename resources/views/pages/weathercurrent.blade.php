@@ -11,8 +11,18 @@
 
     $f = ((9/4) * $c) + 32;
 
+    $f = round($f,2);
+
     return $f;
   }
+
+  function convertPressure($pressure) {
+
+    $pressure = $pressure / 100;
+
+    return $pressure;
+  }
+
 
 
 ?>
@@ -22,12 +32,12 @@
   <h2>Temperature: {{$current->temperature}} &deg;C</h2>
   <h2>Temperature: {{convertToFarenheight($current->temperature)}} &deg;F</h2>
   <h2>Humidity: {{$current->humidity}}%</h2>
-  <h2>Pressure: {{$current->pressure}} mb</h2>
+  <h2>Pressure: {{convertPressure($current->pressure)}} mb</h2>
 
   <hr>
 
   @foreach($recent as $data)
-  Time: {{$data->created_at}} Temperature: {{$data->temperature}} &deg;C Temperature: {{convertToFarenheight($data->temperature)}} &deg;F Humidity: {{$data->humidity}}% Pressure: {{$data->pressure}} mb<br>
+  Time: {{$data->created_at}} Temperature: {{$data->temperature}} &deg;C Temperature: {{convertToFarenheight($data->temperature)}} &deg;F Humidity: {{$data->humidity}}% Pressure: {{convertPressure($data->pressure)}} mb<br>
   @endforeach
 
 @endsection
