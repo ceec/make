@@ -11,4 +11,10 @@
   <h2>Humidity: {{$current->humidity}}%</h2>
   <h2>Pressure: {{$current->pressure}} mb</h2>
 
+  <hr>
+
+  @foreach($recent as $data)
+  Time: {{$data->created_at}} Temperature: {{$data->temperature}} &deg;C Humidity: {{$data->humidity}}% Pressure: {{$data->pressure}} mb<br>
+  @endforeach
+
 @endsection

@@ -517,10 +517,13 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function currentWeather(){
-        //get stats
+        // Get stats
         $current = Weather::orderBy('created_at','DESC')->first();
+        // Last ten
+        $recent = Weather::orderBy('created_at','DESC')->take(20)->get();
 
         return  view('pages.weathercurrent')
+        ->with('recent',$recent)
         ->with('current',$current);
     }     
 
