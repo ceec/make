@@ -36,6 +36,9 @@ Route::get('/bookshelf','PageController@bookshelf');
 Route::get('/weather','PageController@weather');
 Route::get('/currentweather','PageController@currentWeather');
 
+// Weather Graphs
+Route::get('/weather/data','WeatherController@data');
+
 //rocks
 Route::get('/rocks', 'PageController@rocks');
 Route::get('rocks/{mineral_name}', 'PageController@showMinerals');

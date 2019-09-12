@@ -3,7 +3,29 @@
 
 
 @section('content')
+<style>
+#chartdiv {
+  width: 100%;
+  height: 200px;
+}
 
+#chartdiv2 {
+  width: 100%;
+  height: 200px;
+}
+
+#chartdiv3 {
+  width: 100%;
+  height: 200px;
+}
+</style>
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+			<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+			<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+			<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+			<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+			<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+      <script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
 
 <div class="container">
 
@@ -32,16 +54,128 @@
 ?>
   <br>
   <h1>Current Weather at {{date('F n, Y G:i',strtotime($current->created_at))}}</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Temp: {{$current->temperature}} &deg;C</h2>
+      <h2>Temp: {{convertToFarenheight($current->temperature)}} &deg;F</h2>
+      <h2>Humidity: {{$current->humidity}}%</h2>
+      <h2>Pressure: {{convertPressure($current->pressure)}} mb</h2>
+    </div>
+    <div class="col-md-3">
+       <div id="chartdiv"></div>
+    </div>
+    <div class="col-md-3">
+       <div id="chartdiv2"></div>
+    </div>
+    <div class="col-md-3">
+       <div id="chartdiv3"></div>
+    </div>        
+  </div>
 
-  <h2>Temperature: {{$current->temperature}} &deg;C</h2>
-  <h2>Temperature: {{convertToFarenheight($current->temperature)}} &deg;F</h2>
-  <h2>Humidity: {{$current->humidity}}%</h2>
-  <h2>Pressure: {{convertPressure($current->pressure)}} mb</h2>
 
   <hr>
 
   @foreach($recent as $data)
   Time: {{$data->created_at}} Temperature: {{$data->temperature}} &deg;C Temperature: {{convertToFarenheight($data->temperature)}} &deg;F Humidity: {{$data->humidity}}% Pressure: {{convertPressure($data->pressure)}} mb<br>
   @endforeach
+<script>
+var chart = AmCharts.makeChart("chartdiv", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 50,
+    "usePrefixes": true,
+    "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
+    "dataLoader": {
+    "url": "/weather/data",
+    "format": "json"
+  },
+    "valueAxes": [{
+        "axisAlpha": 0,
+        "position": "left",
+       // "maximum": "14000000",
+        "title": "Temperature"
+    }],
+    "graphs": [{
+      // "id":events[i].id,
+      "title": 'Temperature',
+      // "bullet": "none",
+      "valueField":'temperature'
+    }],
+    "categoryField": "created_at",
+    "categoryAxis": {
+      "parseDates": true,
+      "minPeriod": "ss",
+    },
 
+    "export": {
+        "enabled": false
+    }
+});
+
+var chart = AmCharts.makeChart("chartdiv2", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 50,
+    "usePrefixes": true,
+    "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
+    "dataLoader": {
+    "url": "/weather/data",
+    "format": "json"
+  },
+    "valueAxes": [{
+        "axisAlpha": 0,
+        "position": "left",
+       // "maximum": "14000000",
+        "title": "Humidity"
+    }],
+    "graphs": [{
+      // "id":events[i].id,
+      "title": 'Temperature',
+      // "bullet": "none",
+      "valueField":'humidity'
+    }],
+    "categoryField": "created_at",
+    "categoryAxis": {
+      "parseDates": true,
+      "minPeriod": "ss",
+    },
+
+    "export": {
+        "enabled": false
+    }
+});
+
+var chart = AmCharts.makeChart("chartdiv3", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 50,
+    "usePrefixes": true,
+    "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
+    "dataLoader": {
+    "url": "/weather/data",
+    "format": "json"
+  },
+    "valueAxes": [{
+        "axisAlpha": 0,
+        "position": "left",
+       // "maximum": "14000000",
+        "title": "Pressure"
+    }],
+    "graphs": [{
+      // "id":events[i].id,
+      "title": 'Temperature',
+      // "bullet": "none",
+      "valueField":'pressure'
+    }],
+    "categoryField": "created_at",
+    "categoryAxis": {
+      "parseDates": true,
+      "minPeriod": "ss",
+    },
+
+    "export": {
+        "enabled": false
+    }
+});
+</script>
 @endsection
