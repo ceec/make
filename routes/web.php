@@ -38,6 +38,7 @@ Route::get('/currentweather','PageController@currentWeather');
 
 // Weather Graphs
 Route::get('/weather/data','WeatherController@data');
+Route::get('/weather/data/week','WeatherController@dataWeek');
 
 //rocks
 Route::get('/rocks', 'PageController@rocks');

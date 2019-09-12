@@ -23,4 +23,18 @@ class WeatherController extends Controller
         echo json_encode($data);
     }
 
+     /**
+     * Data for weather graph
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function dataWeek(){
+
+        // Need to get data for last week
+        $data = Weather::where('created_at', '>=', Carbon::now()->subWeek())->get();
+
+        echo json_encode($data);
+    }
+
+
 }

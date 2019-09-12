@@ -18,6 +18,11 @@
   width: 100%;
   height: 200px;
 }
+
+#chartdiv4 {
+  width: 100%;
+  height: 300px;
+}
 </style>
 	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 			<script src="https://www.amcharts.com/lib/3/serial.js"></script>
@@ -70,6 +75,11 @@
     <div class="col-md-3">
        <div id="chartdiv3"></div>
     </div>        
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="chartdiv4"></div>
+    </div>
   </div>
 
 
@@ -171,6 +181,59 @@ var chart = AmCharts.makeChart("chartdiv3", {
     "categoryAxis": {
       "parseDates": true,
       "minPeriod": "ss",
+    },
+
+    "export": {
+        "enabled": false
+    }
+});
+
+var chart = AmCharts.makeChart("chartdiv4", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 50,
+    "usePrefixes": true,
+    "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
+    "dataLoader": {
+    "url": "/weather/data/week",
+    "format": "json"
+  },
+    "valueAxes": [{
+        "id": "temperature",
+        "position": "left",
+        "title": "Temperature"
+    }, {
+        "id": "humidity",
+        "position": "left",
+        "inside": true
+    }, {
+        "id": "pressure",
+        "inside": true,
+        "position": "right",
+        "title": "Pressure"
+    }],
+    "graphs": [{
+      // "id":events[i].id,
+      "title": 'Temperature',
+      // "bullet": "none",
+      "valueAxis": "temperature",
+      "valueField":'temperature'
+    },{
+      // "id":events[i].id,
+      "title": 'Temperature',
+      // "bullet": "none",
+      "valueAxis": "humidity",
+      "valueField":'humidity'
+    },{
+      // "id":events[i].id,
+      "title": 'Temperature',
+      // "bullet": "none",
+      "valueAxis": "pressure",
+      "valueField":'pressure'
+    }],
+    "categoryField": "created_at",
+    "categoryAxis": {
+     // "parseDates": true,
     },
 
     "export": {
