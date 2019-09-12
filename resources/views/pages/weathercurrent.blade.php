@@ -220,13 +220,13 @@ var chart = AmCharts.makeChart("chartdiv4", {
       "valueField":'temperature'
     },{
       // "id":events[i].id,
-      "title": 'Temperature',
+      "title": 'Humidity',
       // "bullet": "none",
       "valueAxis": "humidity",
       "valueField":'humidity'
     },{
       // "id":events[i].id,
-      "title": 'Temperature',
+      "title": 'Pressure',
       // "bullet": "none",
       "valueAxis": "pressure",
       "valueField":'pressure'
@@ -235,7 +235,9 @@ var chart = AmCharts.makeChart("chartdiv4", {
     "categoryAxis": {
      // "parseDates": true,
     },
-
+    "legend": {
+      "position": "bottom",
+    },
     "export": {
         "enabled": false
     }
