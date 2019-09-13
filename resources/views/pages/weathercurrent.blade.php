@@ -225,7 +225,8 @@ var chart = AmCharts.makeChart("chartdiv4", {
     }],
     "categoryField": "created_at",
     "categoryAxis": {
-    "parseDates": true,
+      "parseDates": true,
+      "minPeriod": "mm"
     },
     "legend": {
       "position": "bottom",
