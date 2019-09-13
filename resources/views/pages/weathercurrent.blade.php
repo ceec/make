@@ -92,8 +92,6 @@
 var chart = AmCharts.makeChart("chartdiv", {
     "type": "serial",
     "theme": "light",
-    "marginRight": 50,
-    "usePrefixes": true,
     "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
     "dataLoader": {
     "url": "/weather/data",
@@ -125,8 +123,6 @@ var chart = AmCharts.makeChart("chartdiv", {
 var chart = AmCharts.makeChart("chartdiv2", {
     "type": "serial",
     "theme": "light",
-    "marginRight": 50,
-    "usePrefixes": true,
     "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
     "dataLoader": {
     "url": "/weather/data",
@@ -158,8 +154,6 @@ var chart = AmCharts.makeChart("chartdiv2", {
 var chart = AmCharts.makeChart("chartdiv3", {
     "type": "serial",
     "theme": "light",
-    "marginRight": 50,
-    "usePrefixes": true,
     "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
     "dataLoader": {
     "url": "/weather/data",
@@ -191,8 +185,6 @@ var chart = AmCharts.makeChart("chartdiv3", {
 var chart = AmCharts.makeChart("chartdiv4", {
     "type": "serial",
     "theme": "light",
-    "marginRight": 50,
-    "usePrefixes": true,
     "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
     "dataLoader": {
     "url": "/weather/data/week",
@@ -233,7 +225,7 @@ var chart = AmCharts.makeChart("chartdiv4", {
     }],
     "categoryField": "created_at",
     "categoryAxis": {
-     // "parseDates": true,
+    "parseDates": true,
     },
     "legend": {
       "position": "bottom",
