@@ -41,7 +41,10 @@ class WeatherController extends Controller
           foreach($data as $key => $point) {
             if ($point->temperature == '-143.68') {
               $point->temperature = '';
+              $point->humidity = '';
+              $point->pressure = '';
             }
+            
           }
         }
 
