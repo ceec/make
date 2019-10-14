@@ -33,7 +33,7 @@ Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
 
 //weather endpoint
-Route::get('/weather','PageController@weather');
+//Route::get('/weather','PageController@weather');
 Route::get('/currentweather','PageController@currentWeather');
 
 // Weather Graphs
