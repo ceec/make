@@ -24,6 +24,7 @@ use App\Mineral;
 use App\Item;
 
 use App\Weather;
+use App\Weatherapartment;
 
 class PageController extends Controller{
     /**
@@ -527,5 +528,46 @@ class PageController extends Controller{
         ->with('current',$current);
     }     
 
+
+
+    // Apartment
+
+    /**
+     * Weather Apartment
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function weatherapartment(Request $request){
+        //add weather data to db
+        $w = new Weatherapartment;
+        $w->temperature = $request->input('temperature');
+        $w->humidity = $request->input('humidity');
+        $w->pressure = $request->input('pressure');
+        $w->windspeed = $request->input('windspeed');
+        $w->save();
+
+        //get stats
+        $weather = Weatherapartment::all();
+
+        return  view('pages.weatherapartment')
+        ->with('weather',$weather);
+    }      
+
+
+     /**
+     * Current Apartment Conditions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function climate(){
+        // Get stats
+        $current = Weatherapartment::orderBy('created_at','DESC')->first();
+        // Last ten
+        $recent = Weatherapartment::orderBy('created_at','DESC')->take(20)->get();
+
+        return  view('pages.climate')
+        ->with('recent',$recent)
+        ->with('current',$current);
+    }     
 
 }

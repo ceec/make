@@ -33,8 +33,13 @@ Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
 
 //weather endpoint
+// camp connection
 //Route::get('/weather','PageController@weather');
 Route::get('/currentweather','PageController@currentWeather');
+
+// Apartment stats
+Route::get('/weatherapartment','PageController@weatherapartment');
+Route::get('/climate','PageController@climate');
 
 // Weather Graphs
 Route::get('/weather/data','WeatherController@data');
