@@ -32,6 +32,9 @@ Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
 
+// Test to see if server stopped caching
+Route::get('/servertest','PageController@bookshelf');
+
 //weather endpoint
 // camp connection
 //Route::get('/weather','PageController@weather');
