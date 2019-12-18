@@ -42,10 +42,55 @@ class TaskController extends Controller {
            
              $allprojects = Project::pluck('name','id');
 
+             // Get tasks done on each day
+             // This seems silly and a lot of copy paste
+             $monday = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('monday this week')->startOfDay(),
+                    Carbon::parse('monday this week ')->endOfDay() ])
+                ->get();
+
+             $tuesday = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('tuesday this week')->startOfDay(),
+                    Carbon::parse('tuesday this week')->endOfDay() ])
+                ->get();    
+                
+             $wednesday = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('wednesday this week')->startOfDay(),
+                    Carbon::parse('wednesday this week')->endOfDay() ])
+                ->get();    
+                
+             $thursday = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('thursday this week')->startOfDay(),
+                    Carbon::parse('thursday this week')->endOfDay() ])
+                ->get();    
+                
+             $friday = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('friday this week')->startOfDay(),
+                    Carbon::parse('friday this week')->endOfDay() ])
+                ->get();    
+                
+             $weekend = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('saturday this week')->startOfDay(),
+                    Carbon::parse('sunday this week')->endOfDay() ])
+                ->get();                    
+
+
             return view('admin.tasks')
                 ->with('generaltasks',$generaltasks)
                 ->with('status',$status)
                 ->with('dailytasks',$dailytasks)
+                ->with('monday',$monday)
+                ->with('tuesday',$tuesday)
+                ->with('wednesday',$wednesday)
+                ->with('thursday',$thursday)
+                ->with('friday',$friday)
+                ->with('weekend',$weekend)                                                                
                 ->with('allprojects',$allprojects);
     } 
 

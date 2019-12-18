@@ -26,6 +26,52 @@
             <a href="/home/tasks/complete"><h2>Completed</h2></a>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h1><?php echo date('Y'); ?> Week <?php echo date('W'); ?></h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4><?php echo date( 'l m/d', strtotime( 'monday this week' )); ?></h4>
+            @foreach($monday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach
+        </div>
+        <div class="col-md-2">
+            <h4><?php echo date( 'l m/d', strtotime( 'tuesday this week' )); ?></h4>
+            @foreach($tuesday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach            
+        </div>
+        <div class="col-md-2">
+            <h4><?php echo date( 'l m/d', strtotime( 'wednesday this week' )); ?></h4>
+            @foreach($wednesday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach               
+        </div>
+        <div class="col-md-2">
+            <h4><?php echo date( 'l m/d', strtotime( 'thursday this week' )); ?></h4>
+            @foreach($thursday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach               
+        </div>        
+        <div class="col-md-2">
+            <h4><?php echo date( 'l m/d', strtotime( 'friday this week' )); ?></h4>
+            @foreach($friday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach               
+        </div> 
+        <div class="col-md-2">
+            <h4>Weekend <?php echo date( 'm/d', strtotime( 'saturday this week' )); ?></h4>
+            @foreach($weekend as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach               
+        </div>                                
+    </div>
 
     @if($status != 'complete')
             <h2>Daily</h2>
