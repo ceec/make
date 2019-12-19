@@ -115,6 +115,8 @@ Route::post('/edit/task','TaskController@edit');
 Route::post('/task/move','TaskController@move');
 Route::post('/add/task/note','TaskController@addNote');
 
+// Daily tasks
+Route::post('/edit/dailytask','TaskController@editDailyTask');
 
 //purchases
 Route::get('/home/purchase/add','PurchaseController@addDisplay');

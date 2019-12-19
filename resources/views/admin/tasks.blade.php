@@ -66,12 +66,62 @@
             @endforeach               
         </div> 
         <div class="col-md-2">
-            <h4>Weekend <?php echo date( 'm/d', strtotime( 'saturday this week' )); ?></h4>
-            @foreach($weekend as $task)
-                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
-            @endforeach               
+            <table class="table">
+                <tr>
+                    <td>Daily</td>
+                    <td>M</td>
+                    <td>T</td>
+                    <td>W</td>
+                    <td>R</td>
+                    <td>F</td>
+                </tr>
+                @foreach($dailyprojects as $project)
+                <tr>
+                    <td>{{$project['name']}}</td>
+                    @for( $i=0; $i < 5; $i++)
+                        <?php $today = date('Y').'_'.date('W').'_'.$i; ?>
+                        <td><input type="checkbox" class="daily" data-project="{{$project['id']}}" 
+                            @foreach($daily as $day)
+                                @if (($day->daily == $today) && ($day->project_id == $project['id']))
+                                    checked
+                                @endif
+                            @endforeach
+                            value="{{$today}}"></td>
+                    @endfor                    
+                </tr>
+                @endforeach                                              
+            </table>
         </div>                                
     </div>
+    <script>
+        $('.daily').on('click',function(){
+            // Send the values
+            let complete = this.value;
+            let project = this.getAttribute('data-project');
+
+            $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                })
+
+                $.ajax({
+                    type: "POST",
+                    url: '/edit/dailytask',
+                    data: {complete:complete,
+                            projectID:project},
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log('it worked');
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
+
+            console.log(this.value);
+        });
+    </script>
 
     @if($status != 'complete')
             <h2>Daily</h2>

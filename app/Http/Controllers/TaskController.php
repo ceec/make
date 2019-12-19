@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Task;
 use App\Project;
 use App\Tasknote;
+use App\Dailytask;
 
 use Carbon\Carbon;
 
@@ -80,6 +81,23 @@ class TaskController extends Controller {
                     Carbon::parse('sunday this week')->endOfDay() ])
                 ->get();                    
 
+            // Fill out daily checkboxes
+            $daily = Dailytask::whereBetween('updated_at', [
+                    Carbon::parse('monday this week')->startOfDay(),
+                    Carbon::parse('sunday this week')->endOfDay() ])
+                ->get();  
+
+            // Daily projects
+            $dailyprojects[0]['name'] = '日本語';
+            $dailyprojects[0]['id'] = 21;
+            $dailyprojects[1]['name'] = 'Read';
+            $dailyprojects[1]['id'] = 7;      
+            $dailyprojects[2]['name'] = 'Clean';
+            $dailyprojects[2]['id'] = 11;
+            $dailyprojects[3]['name'] = 'Tutorials';
+            $dailyprojects[3]['id'] = 39;                                                      
+
+
 
             return view('admin.tasks')
                 ->with('generaltasks',$generaltasks)
@@ -90,7 +108,9 @@ class TaskController extends Controller {
                 ->with('wednesday',$wednesday)
                 ->with('thursday',$thursday)
                 ->with('friday',$friday)
-                ->with('weekend',$weekend)                                                                
+                ->with('weekend',$weekend)   
+                ->with('daily',$daily)   
+                ->with('dailyprojects',$dailyprojects)                                                          
                 ->with('allprojects',$allprojects);
     } 
 
@@ -217,6 +237,25 @@ class TaskController extends Controller {
 
         return redirect('/home/task/'.$task_id);          
     } 
+
+
+    // Daily Tasks
+
+    /**
+     * Edit daily task
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editDailyTask(Request $request) {
+        $complete = $request->input('complete');
+
+        $d = new Dailytask;
+        $d->project_id = $request->input('projectID');
+        $d->daily = $complete;
+        $d->save();
+        
+    }     
+
 
 
 
