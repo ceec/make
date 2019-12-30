@@ -75,11 +75,17 @@ class TaskController extends Controller {
                     Carbon::parse('friday this week')->endOfDay() ])
                 ->get();    
                 
-             $weekend = Task::where('status','=',1)
+             $saturday = Task::where('status','=',1)
                 ->whereBetween('updated_at', [
                     Carbon::parse('saturday this week')->startOfDay(),
+                    Carbon::parse('saturday this week')->endOfDay() ])
+                ->get();   
+                
+             $sunday = Task::where('status','=',1)
+                ->whereBetween('updated_at', [
+                    Carbon::parse('sunday this week')->startOfDay(),
                     Carbon::parse('sunday this week')->endOfDay() ])
-                ->get();                    
+                ->get();                   
 
             // Fill out daily checkboxes
             $daily = Dailytask::whereBetween('updated_at', [
@@ -108,7 +114,8 @@ class TaskController extends Controller {
                 ->with('wednesday',$wednesday)
                 ->with('thursday',$thursday)
                 ->with('friday',$friday)
-                ->with('weekend',$weekend)   
+                ->with('saturday',$saturday)   
+                ->with('sunday',$sunday)   
                 ->with('daily',$daily)   
                 ->with('dailyprojects',$dailyprojects)                                                          
                 ->with('allprojects',$allprojects);

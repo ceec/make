@@ -17,14 +17,39 @@
             {!! Form::close() !!}         
         </div>
         <div class="col-md-3">
-            <a href="/home/tasks"><h2>To Do</h2></a>
+            <a href="/home/tasks"><h3>To Do</h3></a>
+            <a href="/home/tasks/project"><h3>By Project</h3></a>
+            <a href="/home/tasks/complete"><h3>Completed</h3></a>
         </div>
         <div class="col-md-3">
-            <a href="/home/tasks/project"><h2>By Project</h2></a>
+                       <table class="table">
+                <tr>
+                    <td>Daily</td>
+                    <td>M</td>
+                    <td>T</td>
+                    <td>W</td>
+                    <td>R</td>
+                    <td>F</td>
+                    <td>S</td>
+                    <td>S</td>
+                </tr>
+                @foreach($dailyprojects as $project)
+                <tr>
+                    <td>{{$project['name']}}</td>
+                    @for( $i=0; $i < 7; $i++)
+                        <?php $today = date('Y').'_'.date('W').'_'.$i; ?>
+                        <td><input type="checkbox" class="daily" data-project="{{$project['id']}}" 
+                            @foreach($daily as $day)
+                                @if (($day->daily == $today) && ($day->project_id == $project['id']))
+                                    checked
+                                @endif
+                            @endforeach
+                            value="{{$today}}"></td>
+                    @endfor                    
+                </tr>
+                @endforeach                                              
+            </table>
         </div>        
-        <div class="col-md-3">
-            <a href="/home/tasks/complete"><h2>Completed</h2></a>
-        </div>
     </div>
     
     <div class="row">
@@ -65,33 +90,18 @@
                 <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
             @endforeach               
         </div> 
-        <div class="col-md-2">
-            <table class="table">
-                <tr>
-                    <td>Daily</td>
-                    <td>M</td>
-                    <td>T</td>
-                    <td>W</td>
-                    <td>R</td>
-                    <td>F</td>
-                </tr>
-                @foreach($dailyprojects as $project)
-                <tr>
-                    <td>{{$project['name']}}</td>
-                    @for( $i=0; $i < 5; $i++)
-                        <?php $today = date('Y').'_'.date('W').'_'.$i; ?>
-                        <td><input type="checkbox" class="daily" data-project="{{$project['id']}}" 
-                            @foreach($daily as $day)
-                                @if (($day->daily == $today) && ($day->project_id == $project['id']))
-                                    checked
-                                @endif
-                            @endforeach
-                            value="{{$today}}"></td>
-                    @endfor                    
-                </tr>
-                @endforeach                                              
-            </table>
-        </div>                                
+        <div class="col-md-1">
+            <h4><?php echo date( 'l m/d', strtotime( 'saturday this week' )); ?></h4>
+            @foreach($saturday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach               
+        </div>      
+        <div class="col-md-1">
+            <h4><?php echo date( 'l m/d', strtotime( 'sunday this week' )); ?></h4>
+            @foreach($sunday as $task)
+                <div><a href="/home/task/{{$task->id}}">{{$task->task}}</a></div>
+            @endforeach               
+        </div>                                     
     </div>
     <script>
         $('.daily').on('click',function(){
