@@ -100,7 +100,7 @@ class TaskController extends Controller {
             $dailyprojects[1]['id'] = 7;      
             $dailyprojects[2]['name'] = 'Clean';
             $dailyprojects[2]['id'] = 11;
-            $dailyprojects[3]['name'] = 'Tutorials';
+            $dailyprojects[3]['name'] = 'Exercise';
             $dailyprojects[3]['id'] = 39;                                                      
 
 
