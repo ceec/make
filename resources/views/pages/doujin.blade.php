@@ -7,47 +7,12 @@ ccmakesthings
 
 @section('content')
 
-<style>
-    .padding{
-        padding-left: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .volume {
-        background-color: lightgray;
-    }
-</style>
 	<div class="container">
-    <input type="text" placeholder="Search" id="search">
-    <br><br>
+        <h2>Doujin</h2>
 
+        @foreach($groups as $group)
+            <a href="/doujin/{{$group->url}}">{{$group->title}}</a><br>
 
-
-                
-                    @foreach($volumes as $volume)
-                        <div class="row volume">
-       
-                    			<div class="col">
-                    				<img class="img-fluid" src="/images/chelsea/doujin/{{$volume->id}}.jpg">
-                    			</div>
-                    			<div class="col padding">
-                    				{{$volume->title_j}} {{$volume->title_e	}}<hr>
-                    				{{$volume->pairing->name}}
-                    			</div>
-
-                        
-                   
-
-                            </div>
-                            <br>
-                            
-                    @endforeach
-                </div>
-
-
-		
-		
-	</div>
-
+        @endforeach
+    </div>
 @endsection

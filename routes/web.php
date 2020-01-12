@@ -27,10 +27,17 @@ Route::get('/chelsea','PageController@chelsea');
 Route::get('/manga','PageController@manga');
 Route::get('/counties','PageController@counties');
 Route::get('/projects','PageController@projects');
-Route::get('/doujin','PageController@doujin');
+
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
+
+// Doujin section
+Route::get('/doujin/{url}/{volume_id}','DoujinController@volume');
+Route::get('/doujin/{url}','DoujinController@group');
+Route::get('/doujin','DoujinController@doujin');
+
+
 
 // Test to see if server stopped caching
 Route::get('/servertest','PageController@bookshelf');

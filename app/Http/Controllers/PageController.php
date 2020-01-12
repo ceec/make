@@ -266,20 +266,6 @@ class PageController extends Controller{
             ->with('volumes',$volumes);
     }  
 
-
-    /**
-     * All Doujin List
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function doujin(){
-        $volumes = Volume::where('user_id','=',2)->get();
-       
-
-        return  view('pages.doujin')
-            ->with('volumes',$volumes);
-    }  
-
     ///travel
      /**
      * counites
