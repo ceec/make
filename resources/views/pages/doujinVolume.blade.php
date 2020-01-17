@@ -12,7 +12,7 @@ ccmakesthings
   <br>
     <div class="row">
       <div class="col-md-8">
-        <img src="/images/doujin/{{$volume->id}}.jpg"><br>
+        <img src="/images/doujin/{{$volume->id}}.jpg">
         <img src="/images/doujin/{{$volume->id}}b.jpg">
       </div>      
       <div class="col-md-4">
