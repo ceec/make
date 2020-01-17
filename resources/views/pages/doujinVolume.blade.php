@@ -11,10 +11,8 @@ ccmakesthings
   <h2><a href="/doujin">Doujin</a> / <a href="/doujin/{{$group->url}}">{{$group->title}}</a> / {{$volume->title_e}}</h2>
   <br>
     <div class="row">
-      <div class="col-md-4">
-        <img src="/images/doujin/{{$volume->id}}.jpg">
-      </div>
-      <div class="col-md-4">
+      <div class="col-md-8">
+        <img src="/images/doujin/{{$volume->id}}.jpg"><br>
         <img src="/images/doujin/{{$volume->id}}b.jpg">
       </div>      
       <div class="col-md-4">
