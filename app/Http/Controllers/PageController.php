@@ -348,9 +348,11 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function books(){
-        $books = Book::orderBy('created_at','desc')->get();
+        $books = Book::where('type_id','=',0)->orderBy('created_at','desc')->get();
+        $types = Type::all();
 
         return  view('pages.books')
+        ->with('types',$types)
         ->with('books',$books);
     }  
 
@@ -377,8 +379,10 @@ class PageController extends Controller{
         $type = Type::where('url','=',$type_name)->first();
 
         $books = Book::where('type_id','=',$type->id)->orderBy('created_at','desc')->get();
+        $types = Type::all();
 
         return  view('pages.books')
+        ->with('types',$types)
         ->with('books',$books);
     }  
 
@@ -392,8 +396,10 @@ class PageController extends Controller{
         $group = Group::where('url','=',$group_name)->first();
 
         $books = Book::where('group_id','=',$group->id)->orderBy('created_at','desc')->get();
+        $types = Type::all();
 
         return  view('pages.books')
+        ->with('types',$types)
         ->with('books',$books);
     } 
 
