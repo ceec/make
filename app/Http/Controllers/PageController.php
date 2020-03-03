@@ -562,4 +562,15 @@ class PageController extends Controller{
         ->with('current',$current);
     }     
 
+
+     /**
+     * Time - cause its hard
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function time(){
+        return  view('pages.time');
+    }  
+
+
 }

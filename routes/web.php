@@ -31,6 +31,7 @@ Route::get('/projects','PageController@projects');
 Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
+Route::get('/time','PageController@time');
 
 // Doujin section
 Route::get('/doujin/{url}/{volume_id}','DoujinController@volume');
