@@ -126,6 +126,10 @@ Route::post('/add/task/note','TaskController@addNote');
 // Daily tasks
 Route::post('/edit/dailytask','TaskController@editDailyTask');
 
+// Chores
+Route::get('/home/chores','ChoreController@chores');
+Route::post('/edit/choreday','ChoreController@editChoreDay');
+
 //purchases
 Route::get('/home/purchase/add','PurchaseController@addDisplay');
 Route::get('/home/purchase/edit/{purchase_id}','PurchaseController@editDisplay');
