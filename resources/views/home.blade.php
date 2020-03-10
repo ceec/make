@@ -42,7 +42,21 @@
                                 <a href="/home/item/list">Edit Item</a><br>
                                 <a href="/home/mineral/add">Add Mineral</a><br>
                                 <a href="/home/mineral/list">Edit Mineral</a>                                
-                            </div>                            
+                            </div>  
+                            <div class="col-md-3">
+                                <h2>Pages</h2>
+                                <a href="/movies">Movies</a><br>
+                                <a href="/manga">Manga</a><br>
+                                <a href="/counties">Counties</a><br>
+                                <a href="/wordcount">Wordcount</a><br>
+                            </div>   
+                            <div class="col-md-3">
+                                <h2>Pages</h2>
+                                <a href="/resources">Resources</a><br>
+                                <a href="/bookshelf">Bookshelf</a><br>
+                                <a href="/rocks">Rocks</a><br>
+                                <a href="/books">Books</a><br>
+                            </div>                                                      
                         </div>
                     <hr>
                     <h2>Database</h2>
