@@ -52,6 +52,11 @@ Route::get('/currentweather','PageController@currentWeather');
 Route::get('/weatherapartment','PageController@weatherapartment');
 Route::get('/climate','PageController@climate');
 
+// Weather
+
+// Grabbing the data from tempest
+Route::get('/weather/getdata','WeatherController@getData');
+
 // Weather Graphs
 Route::get('/weather/data','WeatherController@data');
 Route::get('/weather/data/week','WeatherController@dataWeek');

@@ -11,6 +11,35 @@ class WeatherController extends Controller
 {
 
      /**
+     * Get Data from Tempest
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getData() {
+
+      // Grab data from the url
+      // My station id 19456
+      // https://swd.weatherflow.com/swd/rest/observations/station/19456?api_key=20c70eae-e62f-4d3b-b3a4-8586e90f3ac8
+
+      // There is 1000 better ways to do this?
+      $rawdata = file_get_contents('https://swd.weatherflow.com/swd/rest/observations/station/19456?api_key=20c70eae-e62f-4d3b-b3a4-8586e90f3ac8');
+
+      // Parse the data
+      $data = json_decode($rawdata, true);
+
+      // Insert into the Weather table
+      $w = new Weather;
+
+      foreach($data['obs'][0] as $key => $value) {
+        $w->$key = $value;
+      }
+      $w->save();
+
+
+    }
+
+
+     /**
      * Data for weather graph
      *
      * @return \Illuminate\Http\Response
