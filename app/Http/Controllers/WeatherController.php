@@ -63,15 +63,15 @@ class WeatherController extends Controller
         $data = Weather::where('created_at', '>=', Carbon::now()->subWeek())->get();
 
         // Check if there were any errors
-        $count = Weather::where('temperature','=','-143.68')->where('created_at', '>=', Carbon::now()->subWeek())->count();
+        $count = Weather::where('air_temperature','=','-143.68')->where('created_at', '>=', Carbon::now()->subWeek())->count();
         if ($count > 0) {
           // Loop through the errors and set -143.68 to ''
           //$data = json_encode($data);
           foreach($data as $key => $point) {
-            if ($point->temperature == '-143.68') {
-              unset($point->temperature);
-              unset($point->humidity);
-              unset($point->pressure);
+            if ($point->air_temperature == '-143.68') {
+              unset($point->air_temperature);
+              unset($point->relative_humidity);
+              unset($point->barometric_pressure);
             }
             
           }

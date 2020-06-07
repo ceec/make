@@ -61,10 +61,10 @@
   <h1>Current Weather at {{date('F n, Y G:i',strtotime($current->created_at))}}</h1>
   <div class="row">
     <div class="col-md-3">
-      <h2>Temp: {{$current->temperature}} &deg;C</h2>
-      <h2>Temp: {{convertToFarenheight($current->temperature)}} &deg;F</h2>
-      <h2>Humidity: {{$current->humidity}}%</h2>
-      <h2>Pressure: {{convertPressure($current->pressure)}} mb</h2>
+      <h2>Temp: {{$current->air_temperature}} &deg;C</h2>
+      <h2>Temp: {{convertToFarenheight($current->air_temperature)}} &deg;F</h2>
+      <h2>Humidity: {{$current->relative_humidity}}%</h2>
+      <h2>Pressure: {{$current->barometric_pressure}} mb</h2>
     </div>
     <div class="col-md-3">
        <div id="chartdiv"></div>
@@ -86,7 +86,7 @@
   <hr>
 
   @foreach($recent as $data)
-  Time: {{$data->created_at}} Temperature: {{$data->temperature}} &deg;C Temperature: {{convertToFarenheight($data->temperature)}} &deg;F Humidity: {{$data->humidity}}% Pressure: {{convertPressure($data->pressure)}} mb<br>
+  Time: {{$data->created_at}} Temperature: {{$data->air_temperature}} &deg;C Temperature: {{convertToFarenheight($data->air_temperature)}} &deg;F Humidity: {{$data->relative_humidity}}% Pressure: {{$data->barometric_pressure}} mb<br>
   @endforeach
 <script>
 var chart = AmCharts.makeChart("chartdiv", {
@@ -107,7 +107,7 @@ var chart = AmCharts.makeChart("chartdiv", {
       // "id":events[i].id,
       "title": 'Temperature',
       // "bullet": "none",
-      "valueField":'temperature'
+      "valueField":'air_temperature'
     }],
     "categoryField": "created_at",
     "categoryAxis": {
@@ -138,7 +138,7 @@ var chart = AmCharts.makeChart("chartdiv2", {
       // "id":events[i].id,
       "title": 'Temperature',
       // "bullet": "none",
-      "valueField":'humidity'
+      "valueField":'relative_humidity'
     }],
     "categoryField": "created_at",
     "categoryAxis": {
@@ -169,7 +169,7 @@ var chart = AmCharts.makeChart("chartdiv3", {
       // "id":events[i].id,
       "title": 'Temperature',
       // "bullet": "none",
-      "valueField":'pressure'
+      "valueField":'barometric_pressure'
     }],
     "categoryField": "created_at",
     "categoryAxis": {
@@ -209,19 +209,19 @@ var chart = AmCharts.makeChart("chartdiv4", {
       "title": 'Temperature',
       // "bullet": "none",
       "valueAxis": "temperature",
-      "valueField":'temperature'
+      "valueField":'air_temperature'
     },{
       // "id":events[i].id,
       "title": 'Humidity',
       // "bullet": "none",
       "valueAxis": "humidity",
-      "valueField":'humidity'
+      "valueField":'relative_humidity'
     },{
       // "id":events[i].id,
       "title": 'Pressure',
       // "bullet": "none",
       "valueAxis": "pressure",
-      "valueField":'pressure'
+      "valueField":'barometric_pressure'
     }],
     "categoryField": "created_at",
     "categoryAxis": {
