@@ -47,7 +47,7 @@ class WeatherController extends Controller
     public function data(){
 
         // Need to get 24 hours before now
-        $data = Weather::where('created_at', '>=', Carbon::now()->subDay())->get();
+        $data = Weather::select('air_temperature','relative_humidity','barometric_pressure','created_at')->where('created_at', '>=', Carbon::now()->subDay())->get();
 
         echo json_encode($data);
     }
