@@ -47,7 +47,7 @@ class WeatherController extends Controller
     public function data(){
 
         // Need to get 24 hours before now
-        $data = Weather::select('air_temperature','relative_humidity','barometric_pressure','created_at')->where('created_at', '>=', Carbon::now()->subDay())->get();
+        $data = Weather::where('created_at', '>=', Carbon::now()->subDay())->get();
 
         echo json_encode($data);
     }
@@ -60,22 +60,22 @@ class WeatherController extends Controller
     public function dataWeek(){
 
         // Need to get data for last week
-        $data = Weather::where('created_at', '>=', Carbon::now()->subWeek())->get();
+        $data = Weather::select('air_temperature','relative_humidity','barometric_pressure','created_at')->where('created_at', '>=', Carbon::now()->subWeek())->get();
 
         // Check if there were any errors
-        $count = Weather::where('air_temperature','=','-143.68')->where('created_at', '>=', Carbon::now()->subWeek())->count();
-        if ($count > 0) {
-          // Loop through the errors and set -143.68 to ''
-          //$data = json_encode($data);
-          foreach($data as $key => $point) {
-            if ($point->air_temperature == '-143.68') {
-              unset($point->air_temperature);
-              unset($point->relative_humidity);
-              unset($point->barometric_pressure);
-            }
+        // $count = Weather::where('air_temperature','=','-143.68')->where('created_at', '>=', Carbon::now()->subWeek())->count();
+        // if ($count > 0) {
+        //   // Loop through the errors and set -143.68 to ''
+        //   //$data = json_encode($data);
+        //   foreach($data as $key => $point) {
+        //     if ($point->air_temperature == '-143.68') {
+        //       unset($point->air_temperature);
+        //       unset($point->relative_humidity);
+        //       unset($point->barometric_pressure);
+        //     }
             
-          }
-        }
+        //   }
+        // }
 
         echo json_encode($data);
     }
