@@ -65,7 +65,7 @@
       <h2>Temp: {{convertToFarenheight($current->air_temperature)}} &deg;F</h2>
       <h2>Humidity: {{$current->relative_humidity}}%</h2>
       <h2>Pressure: {{$current->barometric_pressure}} mb</h2>
-      <h2>Average Wind: {{$current->wind_avg}} mph {{$current->wind_direction}}&deg;
+      <h2>Average Wind: {{$current->wind_avg}} mph {{$current->wind_direction}}&deg; {{$current->cardinal_direction}}
     </div>
     <div class="col-md-3">
        <div id="chartdiv"></div>
