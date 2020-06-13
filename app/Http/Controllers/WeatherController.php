@@ -27,12 +27,24 @@ class WeatherController extends Controller
       // Parse the data
       $data = json_decode($rawdata, true);
 
+      // Calculate the wind direction from degrees
+
+      $winddegree = $data['obs'][0]['wind_direction'];
+      $direction = ($winddegree % 360);
+      $direction = round($direction / 22.5);
+     
+      $directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW","N"];
+
+      $direction =  $directions[$direction];
+
+
       // Insert into the Weather table
       $w = new Weather;
 
       foreach($data['obs'][0] as $key => $value) {
         $w->$key = $value;
       }
+      $w->cardinal_direction = $direction;
       $w->save();
 
 
