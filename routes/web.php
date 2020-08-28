@@ -32,6 +32,7 @@ Route::get('/wordcount','PageController@wordcount');
 Route::get('/resources','PageController@resources');
 Route::get('/bookshelf','PageController@bookshelf');
 Route::get('/time','PageController@time');
+Route::get('/music','PageController@music');
 
 // Doujin section
 Route::get('/doujin/{url}/{volume_id}','DoujinController@volume');
@@ -228,3 +229,28 @@ Route::get('/home/item/list','ItemController@listDisplay');
 //posting
 Route::post('/home/add/item','ItemController@add');
 Route::post('/home/edit/item','ItemController@edit');
+
+// Music
+// Artist
+Route::get('/home/artist/add','ArtistController@addDisplay');
+Route::get('/home/artist/edit/{artist_id}','ArtistController@editDisplay');
+Route::get('/home/artist/list','ArtistController@listDisplay');
+//posting
+Route::post('/home/add/artist','ArtistController@add');
+Route::post('/home/edit/artist','ArtistController@edit');
+
+// Album
+Route::get('/home/album/add','AlbumController@addDisplay');
+Route::get('/home/album/edit/{album_id}','AlbumController@editDisplay');
+Route::get('/home/album/list','AlbumController@listDisplay');
+//posting
+Route::post('/home/add/album','AlbumController@add');
+Route::post('/home/edit/album','AlbumController@edit');
+
+// Songs
+Route::get('/home/song/add','SongController@addDisplay');
+Route::get('/home/song/edit/{song_id}','SongController@editDisplay');
+Route::get('/home/song/list','SongController@listDisplay');
+//posting
+Route::post('/home/add/song','SongController@add');
+Route::post('/home/edit/song','SongController@edit');

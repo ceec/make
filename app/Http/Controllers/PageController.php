@@ -26,6 +26,8 @@ use App\Item;
 use App\Weather;
 use App\Weatherapartment;
 
+use App\Song;
+
 class PageController extends Controller{
     /**
      * Display the homepage.
@@ -571,6 +573,18 @@ class PageController extends Controller{
     public function time(){
         return  view('pages.time');
     }  
+
+     /**
+     * Music - RIP google play music 2020
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function music(){
+        $songs = Song::all();
+
+        return  view('pages.music')
+        ->with('songs',$songs);
+    } 
 
 
 }

@@ -56,7 +56,16 @@
                                 <a href="/bookshelf">Bookshelf</a><br>
                                 <a href="/rocks">Rocks</a><br>
                                 <a href="/books">Books</a><br>
-                            </div>                                                      
+                            </div>  
+                            <div class="col-md-3">
+                                <h2>Music</h2>
+                                <a href="/home/artist/add">Add Artist</a><br>
+                                <a href="/home/artist/list">Edit Artist</a><br>
+                                <a href="/home/album/add">Add Album</a><br>
+                                <a href="/home/album/list">Edit Album</a><br>
+                                <a href="/home/song/add">Add Song</a><br>
+                                <a href="/home/song/list">Edit Song</a><br>
+                            </div>                                                                                  
                         </div>
                     <hr>
                     <h2>Database</h2>
