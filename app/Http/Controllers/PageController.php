@@ -27,6 +27,7 @@ use App\Weather;
 use App\Weatherapartment;
 
 use App\Song;
+use App\Queue;
 
 class PageController extends Controller{
     /**
@@ -592,7 +593,10 @@ class PageController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function queues(){
-        return  view('pages.queues');
+        $qs = Queue::all();
+
+        return  view('pages.queues')
+        ->with('qs',$qs);
     }  
 
 }
