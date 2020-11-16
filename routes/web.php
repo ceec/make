@@ -88,6 +88,9 @@ Route::get('/notes','PageController@notes');
 //just one
 Route::get('/note/{note_id}','PageController@note');
 
+//queues
+Route::get('/queue','PageController@queues');
+
 
 ///data!
 Route::get('/data/counties','DataController@counties');
@@ -254,3 +257,11 @@ Route::get('/home/song/list','SongController@listDisplay');
 //posting
 Route::post('/home/add/song','SongController@add');
 Route::post('/home/edit/song','SongController@edit');
+
+// Qs
+Route::get('/home/queue/add','QueueController@addDisplay');
+Route::get('/home/queue/edit/{queue_id}','QueueController@editDisplay');
+Route::get('/home/queue/list','QueueController@listDisplay');
+//posting
+Route::post('/home/add/queue','QueueController@add');
+Route::post('/home/edit/queue','QueueController@edit');

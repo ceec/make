@@ -586,5 +586,13 @@ class PageController extends Controller{
         ->with('songs',$songs);
     } 
 
+     /**
+     * Queues
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function queues(){
+        return  view('pages.queues');
+    }  
 
 }

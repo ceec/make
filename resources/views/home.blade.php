@@ -65,7 +65,12 @@
                                 <a href="/home/album/list">Edit Album</a><br>
                                 <a href="/home/song/add">Add Song</a><br>
                                 <a href="/home/song/list">Edit Song</a><br>
-                            </div>                                                                                  
+                            </div>   
+                            <div class="col-md-3">
+                                <h2>Queue</h2>
+                                <a href="/home/queue/add">Add Queue</a><br>
+                                <a href="/home/queue/list">Edit Queue</a><br>
+                            </div>                                                                                                              
                         </div>
                     <hr>
                     <h2>Database</h2>
