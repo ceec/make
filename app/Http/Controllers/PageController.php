@@ -28,6 +28,7 @@ use App\Weatherapartment;
 
 use App\Song;
 use App\Queue;
+use App\Queuetype;
 
 class PageController extends Controller{
     /**

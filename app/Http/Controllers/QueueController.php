@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\Queue;
+use App\Queuetype;
 
 class QueueController extends Controller {
 

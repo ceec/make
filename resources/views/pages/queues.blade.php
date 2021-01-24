@@ -22,7 +22,7 @@ ccmakesthings
 		<tr>
 			<td>{{$q->title}}</td>
 			<td>{{$q->why}}</td>
-			<td>{{$q->type_id}}</td>
+			<td>{{$q->type->type}}</td>
 			<td>{{$q->reccomended_by}}</td>
 		</tr>
 		
