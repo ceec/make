@@ -6,6 +6,29 @@
 <div class="container">
         <h2>London and Paris Trip</h2>
 
+        <h3>Itinerary</h3>
+        <ul>
+                <li>June 24 - Ottawa -> London Air Canada #888</li>
+                <li>June 25 - London Central Park Hotel 49/67 Queensborough Terrace, London W2 3SY</li>
+                <li>June 28 - London -> Paris Air France #2571</li>
+                <ul>
+                        <li>Hotel Jardin de Alesia Paris Montparnasse</li>
+                        <li>22 rue Hypplitee Mandrown? 75014 Paris 00 33-1-40-44-5151</li>
+                </ul>
+                <li>July 2 - Paris -> London Air France #1570</li>
+                <ul>
+                        <li>Greenwich Park House Hotel</li>
+                        <li>1-2 Nevada Stat Greenwich, London 020-8305-1478</li>
+                </ul>
+                <li>July 5 - Meadowcroft Lodge</li>
+                <ul>
+                        <li>96-98 Southwood Road, New Elthan, London 44-0-20-8859-1488</li>
+                </ul>
+                <li>July 7 - Cheddar Gorge</li>
+                <li>July 8 - ? Stonehenge</li>
+                <li>July 9 - London -> Ottawa Air Canada #889</li>
+        </ul>
+
         <h3>Wednesday, June 25</h3>
 <p>We got to London's Heathrow Airport around 10:30 AM their time (so about 5:30am EST). It was nice to finally get off the plane since we were stuck on it FOREVER.</p>
 <p>Oh well.</p>
