@@ -81,13 +81,19 @@ class SpotifyController extends Controller {
                 $s->album_id = $album_id;
                 $s->track = $info['song_place'];
                 $s->length = $info['song_length'];
-                $s->plays = 0;
+                $s->spotify_plays = 1;
                 $s->spotify_id = $info['song_id'];
                 $s->save();
 
                 $song_id = $s->id;
               } else {
                 $song_id = $songcheck->id;
+
+                // Increase the play count
+                $play = $songcheck->spotify_plays + 1;
+                $songcheck->spotify_plays = $play;
+                $songcheck->save();
+
               }
 
               // Artists
@@ -116,11 +122,20 @@ class SpotifyController extends Controller {
               }
 
               // Add to spotify play
-              $s = new Spotifyplay;
-              $s->song_id = $info['song_id'];
-              $s->played_at = date('Y-m-d H:i:s',strtotime($info['played_at']));
-              $s->updated_by = 1;
-              $s->save();
+              // Make sure its not already there
+              // WHY NOT UTC
+              date_default_timezone_set('UTC');
+              $info['played_at'] = date('Y-m-d H:i:s',strtotime($info['played_at']));
+              $playcheck = Spotifyplay::where('song_id','=',$info['song_id'])->where('played_at','=',$info['played_at'])->first();
+
+              if (!isset($playcheck)) {
+                $s = new Spotifyplay;
+                $s->song_id = $info['song_id'];
+                $s->played_at = $info['played_at'];
+                $s->updated_by = 1;
+                $s->save();
+              }
+
 
 
 
