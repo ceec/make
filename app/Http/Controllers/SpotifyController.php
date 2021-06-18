@@ -7,6 +7,8 @@ use SpotifyWebAPI;
 use App\Spotifyplay;
 use App\Song;
 use App\Album;
+use App\Artist;
+use App\Songartist;
 
 class SpotifyController extends Controller {
 
@@ -67,10 +69,6 @@ class SpotifyController extends Controller {
                 $album_id = $albumcheck->id;
               }
 
-              // Artists
-              // Songs can have multiple artists, what to do here
-
-
               // Check if this song is already in songs
               $songcheck = Song::where('spotify_id','=',$info['song_id'])->first();
 
@@ -86,9 +84,36 @@ class SpotifyController extends Controller {
                 $s->plays = 0;
                 $s->spotify_id = $info['song_id'];
                 $s->save();
+
+                $song_id = $s->id;
+              } else {
+                $song_id = $songcheck->id;
               }
 
+              // Artists
+              // Artists is always an array most just have one but can have more
+              foreach($track->track->artists as $artist) {
+                // Check if its there
+                $artistcheck = Artist::where('spotify_id','=',$artist->id)->first();
 
+                if (!isset($artistcheck)) {
+                  // Create if its not there
+                  $a = new Artist;
+                  $a->name = $artist->name;
+                  $a->spotify_id = $artist->id;
+                  $a->save();
+
+                  $artist_id = $a->id;
+                } else {
+                  $artist_id = $artistcheck->id;
+                }
+
+                // Need to add to the lookup table
+                  $sa = new Songartist;
+                  $sa->song_id = $song_id;
+                  $sa->artist_id = $artist_id;
+                  $sa->save();               
+              }
 
               // Add to spotify play
               $s = new Spotifyplay;
