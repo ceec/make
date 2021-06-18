@@ -98,6 +98,9 @@ Route::get('/data/words','DataController@words');
 Route::get('/data/grid/{project_id}','DataController@grid');
 
 
+// spotify testing
+Route::get('/spotify','SpotifyController@test');
+
 ///authentication
 Auth::routes();
 
