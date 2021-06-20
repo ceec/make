@@ -19,7 +19,7 @@ class SpotifyController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function test(){
+    public function getListenedSongs(){
 
       $session = new SpotifyWebAPI\Session(
         '2969b21eb1724877b88498acf8445a55',
@@ -32,6 +32,10 @@ class SpotifyController extends Controller {
       if (isset($_GET['code'])) {
           $session->requestAccessToken($_GET['code']);
           $api->setAccessToken($session->getAccessToken());
+
+          // Need to build a separate tool to grab all from the beginning 
+
+          // Then have a cron that checks it, hourly? 
 
           $recent = $api->getMyRecentTracks(['limit' => 5]);
 
