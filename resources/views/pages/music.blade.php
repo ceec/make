@@ -34,13 +34,15 @@ ccmakesthings
 		</thead>
 
 	@foreach($songs as $song)
+
+
 		<tr>
       <td>{{$song->name}}</td>
       <td>{{ltrim(gmdate("i:s", $song->length),0)}}</td>
-			<td>{{$song->artist->name}}</td>
+			<td>{{$song->findartist()}}</td>
 			<td>{{$song->album->name}}</td>
       <td>{{$song->track}}</td>
-      <td>{{$song->plays}}</td>
+      <td>{{$song->spotifyplays()}}</td>
 		</tr>
 		
 

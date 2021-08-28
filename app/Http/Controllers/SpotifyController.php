@@ -119,12 +119,14 @@ class SpotifyController extends Controller {
                 }
 
                 // Need to add to the lookup table
+                $lookupcheck = Songartist::where('song_id','=',$song_id)->where('artist_id','=',$artist_id)->first();
+                if (!isset($lookupcheck)) {
                   $sa = new Songartist;
                   $sa->song_id = $song_id;
                   $sa->artist_id = $artist_id;
-                  $sa->save();               
+                  $sa->save();
+                }
               }
-
               // Add to spotify play
               // Make sure its not already there
               // WHY NOT UTC
