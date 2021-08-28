@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28562b11aebe33a97350018ab19576ec",
-    "content-hash": "e0ee373ed66cf38a9d071561846a0d70",
+    "hash": "8a34715f7f2469e9c4a8a513399c319a",
+    "content-hash": "edf328b2194f012bf10d0a78a479fd58",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -365,6 +365,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29 17:23:10"
         },
         {
@@ -411,7 +412,54 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29 18:48:56"
+        },
+        {
+            "name": "jwilsson/spotify-web-api-php",
+            "version": "3.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jwilsson/spotify-web-api-php.git",
+                "reference": "0d259539545726fa6ba2b2bda36b427496157602"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jwilsson/spotify-web-api-php/zipball/0d259539545726fa6ba2b2bda36b427496157602",
+                "reference": "0d259539545726fa6ba2b2bda36b427496157602",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpunit/phpunit": "^6.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SpotifyWebAPI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wilsson",
+                    "email": "jonathan.wilsson@gmail.com"
+                }
+            ],
+            "description": "A PHP wrapper for Spotify's Web API.",
+            "homepage": "https://github.com/jwilsson/spotify-web-api-php",
+            "keywords": [
+                "spotify"
+            ],
+            "time": "2020-10-19 19:41:24"
         },
         {
             "name": "laravel/framework",
@@ -2933,6 +2981,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2018-07-12 10:23:15"
         },
         {
@@ -3657,6 +3706,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2017-11-27 05:48:46"
         },
         {
@@ -3800,6 +3850,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-08-09 05:50:03"
         },
         {
@@ -4406,12 +4457,12 @@
             "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "88e6d84706d09a236046d686bbea96f07b3a34f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/88e6d84706d09a236046d686bbea96f07b3a34f4",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/88e6d84706d09a236046d686bbea96f07b3a34f4",
                 "reference": "88e6d84706d09a236046d686bbea96f07b3a34f4",
                 "shasum": ""
             },
