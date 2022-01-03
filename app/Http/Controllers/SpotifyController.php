@@ -37,7 +37,16 @@ class SpotifyController extends Controller {
 
           // Then have a cron that checks it, hourly? 
 
-          $recent = $api->getMyRecentTracks(['limit' => 5]);
+          //$recent = $api->getMyRecentTracks(['limit' => 5]);
+          // time is in miliseconds
+          // before doesn't return stuff but after does
+          // great looks like it only saves 15 days of data RIP MY DATA
+          // its weirdly 50 songs, maybe it just remembers the last 50
+          // okay i dont know the best way to cron it so just gona have it pull in last 20 and i can
+          // run it manually
+
+          $recent = $api->getMyRecentTracks(['limit' => 25]);  
+          //$recent = $api->getMyRecentTracks(['after' => 1640382630000]);
 
           foreach ($recent->items as $track) {
               // Album info
